@@ -1,0 +1,881 @@
+
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <title>Guía de fabricación MB9i con PCB &#8211; MODBOX</title>
+<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='../../wp-includes/css/dist/block-library/style.min.css?v=8c82643ef6' type='text/css' media='all' />
+<style id='wp-block-library-theme-inline-css' type='text/css'>
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #263654;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #1258ca;--wp--preset--color--accent: #c70a1a;--wp--preset--color--success: #88c559;--wp--preset--color--contrast: #292a2d;--wp--preset--color--contrast-medium: #79797c;--wp--preset--color--contrast-lower: #323639;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 14px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 24px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 16px;--wp--preset--font-size--huge: 28px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='brands-styles-css' href='../../wp-content/plugins/woocommerce/assets/css/brands.css?v=d46d600e70' type='text/css' media='all' />
+<link rel='stylesheet' id='most-google-fonts-frontend-css' href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&#038;display=swap' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-grid-css' href='../../wp-content/themes/most/assets/css/vendor/bootstrap.min.css?v=5a4dc22c28' type='text/css' media='all' />
+<link rel='stylesheet' id='swiper-css' href='../../wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?v=32a5334290' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-popup-css' href='../../wp-content/themes/most/assets/css/vendor/magnific-popup.css?v=f791d577cf' type='text/css' media='all' />
+<link rel='stylesheet' id='plyr-css' href='../../wp-content/themes/most/assets/css/vendor/plyr.css?v=d1be371ff4' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawesome-css' href='../../wp-content/themes/most/assets/css/vendor/fontawesome.min.css?v=2071d0db00' type='text/css' media='all' />
+<link rel='stylesheet' id='most-main-style-css' href='../../wp-content/themes/most/assets/css/main.css?v=cb21e49125' type='text/css' media='all' />
+<link rel='stylesheet' id='vi-wpvs-frontend-style-css' href='../../wp-content/plugins/product-variations-swatches-for-woocommerce/assets/css/frontend-style.min.css?v=27f59a15a6' type='text/css' media='all' />
+<style id='vi-wpvs-frontend-style-inline-css' type='text/css'>
+.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap{transition: all 30ms ease-in-out;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-variation-button-select,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap{padding:10px 20px;font-size:13px;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap .vi-wpvs-option:not(.vi-wpvs-option-select){border-radius: inherit;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-image.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap ,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-variation_img.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap ,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-color.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap{width: 48px;height:48px;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock-attribute,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-disable{opacity: 1;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock .vi-wpvs-option,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock-attribute .vi-wpvs-option,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-disable .vi-wpvs-option{opacity: .5;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-selected{box-shadow:  0 0 0 1px rgba(33, 33, 33, 1) inset;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-variation-wrap-select-wrap .vi-wpvs-option-wrap.vi-wpvs-option-wrap-selected{box-shadow:  0 0 0 1px rgba(33, 33, 33, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-selected{color:rgba(255, 255, 255, 1);background:rgba(33, 33, 33, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-selected .vi-wpvs-option{color:rgba(255, 255, 255, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-hover{box-shadow:  0 0 0 1px rgba(33, 33, 33, 1) inset;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-variation-wrap-select-wrap .vi-wpvs-option-wrap.vi-wpvs-option-wrap-hover{box-shadow:  0 0 0 1px rgba(33, 33, 33, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-hover{color:rgba(255, 255, 255, 1);background:rgba(33, 33, 33, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-hover .vi-wpvs-option{color:rgba(255, 255, 255, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-default{box-shadow:  0 0 0 1px #cccccc inset;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-variation-wrap-select-wrap .vi-wpvs-option-wrap.vi-wpvs-option-wrap-default{box-shadow:  0 0 0 1px #cccccc ;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-default{color:rgba(33, 33, 33, 1);background:#ffffff;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-default .vi-wpvs-option{color:rgba(33, 33, 33, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap .vi-wpvs-option-tooltip{display: none;}@media screen and (max-width:600px){.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-variation-button-select,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap{font-size:11px;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-image.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap ,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-variation_img.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap ,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-color.vi-wpvs-variation-wrap-vi_wpvs_button_design .vi-wpvs-option-wrap{width: 40.8px;height:40.8px;}}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap{transition: all 30ms ease-in-out;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-variation-button-select,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap{height:32px;width:32px;padding:10px;font-size:13px;border-radius:20px;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap .vi-wpvs-option:not(.vi-wpvs-option-select){border-radius: inherit;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock-attribute,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-disable{opacity: 1;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock .vi-wpvs-option,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock-attribute .vi-wpvs-option,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-disable .vi-wpvs-option{opacity: .5;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-selected{}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-variation-wrap-select-wrap .vi-wpvs-option-wrap.vi-wpvs-option-wrap-selected{}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-selected{background:rgba(0, 0, 0, 0.06);border-radius:20px;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-hover{}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-variation-wrap-select-wrap .vi-wpvs-option-wrap.vi-wpvs-option-wrap-hover{}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-hover{background:rgba(0, 0, 0, 0.06);border-radius:20px;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-default{box-shadow:  0px 4px 2px -2px rgba(238, 238, 238, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-variation-wrap-select-wrap .vi-wpvs-option-wrap.vi-wpvs-option-wrap-default{box-shadow:  0px 4px 2px -2px rgba(238, 238, 238, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-default{background:rgba(0, 0, 0, 0);border-radius:20px;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap .vi-wpvs-option-tooltip{display: none;}@media screen and (max-width:600px){.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-variation-button-select,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap{width:27px;height:27px;font-size:11px;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_color_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-selected{border-radius:17px;}}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap{transition: all 30ms ease-in-out;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-variation-button-select,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap{height:50px;width:50px;padding:3px;font-size:13px;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap .vi-wpvs-option:not(.vi-wpvs-option-select){border-radius: inherit;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock-attribute,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-disable{opacity: 1;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock .vi-wpvs-option,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-out-of-stock-attribute .vi-wpvs-option,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-disable .vi-wpvs-option{opacity: .5;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-selected{box-shadow:  0 0 0 1px rgba(33, 33, 33, 1) inset;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-variation-wrap-select-wrap .vi-wpvs-option-wrap.vi-wpvs-option-wrap-selected{box-shadow:  0 0 0 1px rgba(33, 33, 33, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-hover{box-shadow:  0 0 0 1px rgba(33, 33, 33, 1) inset;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-variation-wrap-select-wrap .vi-wpvs-option-wrap.vi-wpvs-option-wrap-hover{box-shadow:  0 0 0 1px rgba(33, 33, 33, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-default{box-shadow:  0 0 0 1px rgba(238, 238, 238, 1) inset;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-variation-wrap-select-wrap .vi-wpvs-option-wrap.vi-wpvs-option-wrap-default{box-shadow:  0 0 0 1px rgba(238, 238, 238, 1) ;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap.vi-wpvs-option-wrap-default{background:rgba(255, 255, 255, 1);}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap .vi-wpvs-option-tooltip{min-width: 100px;height: auto;padding: 5px 8px;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap .vi-wpvs-option-tooltip{font-size:14px;border-radius:3px;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap .vi-wpvs-option-tooltip{color:#222222;background:#ffffff;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap .vi-wpvs-option-tooltip::after{border-width: 5px;border-style: solid;margin-left: -5px;margin-top: -1px;border-color: #ffffff transparent transparent transparent;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap .vi-wpvs-option-tooltip{border: 1px solid #cccccc;}.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap .vi-wpvs-option-tooltip::before{border-width: 6px;border-style: solid;margin-left: -6px;border-color: #cccccc transparent transparent transparent;}@media screen and (max-width:600px){.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-variation-button-select,.vi-wpvs-variation-wrap.vi-wpvs-variation-wrap-vi_wpvs_image_design .vi-wpvs-option-wrap{width:42px;height:42px;font-size:11px;}}
+</style>
+<script type="text/javascript" src="../../wp-includes/js/jquery/jquery.min.js?v=79cd3587d5" id="jquery-core-js"></script>
+<script type="text/javascript" src="../../wp-includes/js/jquery/jquery-migrate.min.js?v=3ad0c10e50" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="../../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?v=b9c2ed7741" id="jquery-blockui-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="../../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?v=d3a78cb77c" id="js-cookie-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="woocommerce-js-extra">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_password_show":"Mostrar contrase\u00f1a","i18n_password_hide":"Ocultar contrase\u00f1a"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?v=e8481df815" id="woocommerce-js" defer="defer" data-wp-strategy="defer"></script>
+<link rel="canonical" href="./" />
+	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<link rel="icon" href="../../wp-content/uploads/2020/10/cropped-logo_modboxbow-e1690565366144-1-32x32.webp" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/2020/10/cropped-logo_modboxbow-e1690565366144-1-192x192.webp" sizes="192x192" />
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2020/10/cropped-logo_modboxbow-e1690565366144-1-180x180.webp" />
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2020/10/cropped-logo_modboxbow-e1690565366144-1-270x270.webp" />
+<style id="mb-avatar-css">
+.ms-rp--top img[src*="logo_modbox"],.post-meta-footer img[src*="logo_modbox"]{width:28px!important;height:28px!important;max-width:none;flex:none;box-sizing:border-box;padding:5px;margin-right:10px;border-radius:50%;background:#151515;box-shadow:0 0 0 1px rgba(255,255,255,.12);object-fit:contain}
+.post-meta-footer img[src*="logo_modbox"]{width:40px!important;height:40px!important;padding:7px}
+</style>
+<style id="mb-foot-css">
+.elementor-element-f00ed87{width:100%!important}
+.elementor-element-2eeceb4{display:none!important}
+.mb-foot{--mb-accent:hsl(12,85%,58%);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 32px;font-family:"Plus Jakarta Sans",sans-serif;font-size:14px;font-weight:500;color:#959595}
+.mb-foot p{margin:0}
+.mb-foot__copy strong{font-weight:800;letter-spacing:.08em;color:#111}
+.mb-foot__sep{margin:0 .6em;opacity:.6}
+.mb-foot__since{display:inline-flex;align-items:center;gap:12px}
+.mb-foot__label{font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase}
+.mb-keys{display:inline-flex;gap:6px;perspective:300px}
+.mb-keys kbd{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;padding:0 0 4px;box-sizing:border-box;border-radius:7px;
+  font:800 13px/1 "Plus Jakarta Sans",sans-serif;color:#111;background:linear-gradient(180deg,#fff 0%,#ececec 100%);
+  border:1px solid rgba(0,0,0,.12);box-shadow:inset 0 -4px 0 rgba(0,0,0,.08),0 2px 0 rgba(0,0,0,.18),0 6px 12px rgba(0,0,0,.06);
+  transition:transform .12s ease,box-shadow .12s ease,color .12s ease;cursor:default;user-select:none}
+.mb-keys kbd:hover,.mb-keys kbd.is-down{transform:translateY(2px);color:var(--mb-accent);
+  box-shadow:inset 0 -2px 0 rgba(0,0,0,.08),0 0 0 rgba(0,0,0,.18),0 2px 4px rgba(0,0,0,.06)}
+body[data-theme="dark"] .mb-foot__copy strong{color:#f2f2f2}
+body[data-theme="dark"] .mb-keys kbd{color:#f2f2f2;background:linear-gradient(180deg,#2e2e2e 0%,#1d1d1d 100%);border-color:rgba(255,255,255,.1);
+  box-shadow:inset 0 -4px 0 rgba(0,0,0,.35),0 2px 0 #000,0 6px 12px rgba(0,0,0,.35)}
+body[data-theme="dark"] .mb-keys kbd:hover,body[data-theme="dark"] .mb-keys kbd.is-down{color:var(--mb-accent);box-shadow:inset 0 -2px 0 rgba(0,0,0,.35),0 0 0 #000,0 2px 4px rgba(0,0,0,.35)}
+.mb-foot__copy{text-align:left}
+@media (max-width:767px){.mb-foot{flex-direction:column;align-items:center}.mb-foot .mb-foot__copy{text-align:center;line-height:1.7}.mb-foot__sep{display:none}.mb-foot__copy strong::after{content:"\A";white-space:pre}}
+</style>
+<style id="mb-gh-css">
+.mb-gh{--gh-card:#f7f7f7;--gh-visual:#ececec;--gh-ink:#000;--gh-muted:#757575;--gh-chip:#fff;--gh-accent:hsl(12,85%,58%);margin:8px 0 80px}
+body[data-theme="dark"] .mb-gh{--gh-card:#262626;--gh-visual:#141414;--gh-ink:#fffafa;--gh-muted:#919191;--gh-chip:#1c1c1c}
+body[data-theme="dark"] .mb-gh-board{background:linear-gradient(180deg,#333,#222);box-shadow:0 12px 30px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.07)}
+.mb-gh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(420px,100%),1fr));gap:24px}
+.mb-gh-card{display:flex;flex-direction:column;border-radius:26px;overflow:hidden;background:var(--gh-card);transition:transform .25s ease}
+.mb-gh-card:hover{transform:translateY(-4px)}
+.mb-gh-card__visual{display:flex;align-items:center;justify-content:center;aspect-ratio:16/10;max-height:250px;width:100%;background:var(--gh-visual);text-decoration:none!important}
+.mb-gh-board{display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:18px;background:linear-gradient(180deg,#2b2b2b,#191919);box-shadow:0 12px 30px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.08)}
+.mb-gh-board{position:relative}
+.mb-gh-card__visual{isolation:isolate}
+.mb-gh-board--glow::before{content:"";position:absolute;z-index:-1;inset:4px -8px -14px;border-radius:26px;
+  background:conic-gradient(from 0deg,#ff2d2d,#ffae00,#2dff5a,#1ecbff,#4b4bff,#ff2dd0,#ff2d2d);filter:blur(16px) saturate(1.4);opacity:.95;
+  animation:mb-glow 8s linear infinite;transition:inset .3s ease}
+.mb-gh-card:hover .mb-gh-board--glow::before{inset:2px -12px -20px}
+@keyframes mb-glow{to{filter:blur(16px) saturate(1.4) hue-rotate(360deg)}}
+.mb-gh-bt{position:absolute;top:4px;right:5px;display:inline-flex;color:#7fb2ff;opacity:.9}
+.mb-gh-oled{display:flex;align-items:center;width:69px;height:29px;box-sizing:border-box;padding:0 7px;border-radius:4px;background:#05080a;box-shadow:inset 0 0 0 2px #333}
+.mb-gh-oled i{display:block;width:45%;height:5px;border-radius:2px;background:#7fd6ff;box-shadow:0 0 6px #7fd6ff;animation:mb-oled 2.4s steps(6) infinite}
+@keyframes mb-oled{0%{width:15%}100%{width:85%}}
+.mb-gh-board--mbk6,body[data-theme="dark"] .mb-gh-board--mbk6{display:block;width:150px;height:157px;padding:0;background:none;box-shadow:none;filter:drop-shadow(0 12px 18px rgba(0,0,0,.28))}
+.mb-gh-case{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px;width:148px;height:157px;box-sizing:border-box;padding:16px;background:linear-gradient(180deg,#2b2b2b,#191919);
+  clip-path:path('M18 0H106Q114 0 117 6L122 14V42L144 64Q148 68 148 74V139Q148 157 130 157H18Q0 157 0 139V18Q0 0 18 0Z')}
+.mb-gh-case .mb-gh-keys{margin-top:10px}
+body[data-theme="dark"] .mb-gh-case{background:linear-gradient(180deg,#333,#222)}
+.mb-gh-sideknob{position:absolute;z-index:0;left:112px;top:9px;width:36px;height:28px;border-radius:6px;background:repeating-linear-gradient(180deg,rgba(0,0,0,.28) 0 1px,transparent 1px 4px),linear-gradient(180deg,#555,#bbb 35%,#666 60%,#999 80%,#555);box-shadow:0 2px 0 #000;transition:background-position .6s ease}
+.mb-gh-card:hover .mb-gh-sideknob{background-position:0 6px,0 0}
+.mb-gh-keys .mb-gh-knob{justify-self:center;align-self:center;width:30px;height:30px}
+.mb-gh-knob{width:26px;height:26px;border-radius:50%;background:conic-gradient(from 0deg,#555,#bbb,#555,#999,#555);box-shadow:0 2px 0 #000,inset 0 0 0 3px #2b2b2b;transition:transform .6s ease}
+.mb-gh-card:hover .mb-gh-knob{transform:rotate(120deg)}
+.mb-gh-keys{display:grid;gap:7px}
+.mb-gh-keys kbd{display:block;width:34px;height:34px;box-sizing:border-box;border-radius:7px;background:linear-gradient(180deg,#fff,#e6e6e6);border:1px solid rgba(0,0,0,.25);box-shadow:inset 0 -4px 0 rgba(0,0,0,.1),0 2px 0 #000;transition:transform .12s ease,box-shadow .12s ease,background .12s ease}
+.mb-gh-card:hover .mb-gh-keys kbd:nth-of-type(3n+1){transform:translateY(2px);box-shadow:inset 0 -2px 0 rgba(0,0,0,.1),0 0 0 #000;background:linear-gradient(180deg,#fff,hsl(12,85%,90%))}
+.mb-gh-keys kbd:hover{transform:translateY(2px);box-shadow:inset 0 -2px 0 rgba(0,0,0,.1),0 0 0 #000}
+.mb-gh-card__body{display:flex;flex-direction:column;flex:1;padding:18px 24px 22px}
+.mb-gh-card__label{margin:0 0 4px;font-size:13px;font-weight:600;color:var(--gh-accent)}
+.mb-gh-card__title{margin:0 0 8px;font-size:22px;font-weight:600;line-height:1.3}
+.mb-gh-card__title a{color:var(--gh-ink)!important;text-decoration:none!important}
+.mb-gh-card__desc{margin:0 0 14px;font-size:15px;line-height:1.55;color:var(--gh-muted)}
+.mb-gh-card__chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px!important;padding:0!important;list-style:none!important}
+.mb-gh-card__chips li{margin:0!important;padding:4px 12px;border-radius:40px;background:var(--gh-chip);color:var(--gh-ink);font-size:12.5px;font-weight:500;line-height:1.5}
+.mb-gh-card__chips li::before,.mb-gh-card__chips li::marker{content:none}
+.mb-gh-card__guias{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:-4px 0 18px}
+.mb-gh-card__guias>span:first-child{margin-right:4px;font-size:13px;font-weight:600;color:var(--gh-muted)}
+.mb-gh-card__guias a,.mb-gh-card__guias .is-pronto{padding:5px 14px;border-radius:40px;border:1px solid var(--gh-ink);font-size:13px;font-weight:600;line-height:1.4;text-decoration:none!important}
+.mb-gh-card__guias a{color:var(--gh-ink)!important;transition:background .2s ease,color .2s ease}
+.mb-gh-card__guias a:hover{background:var(--gh-ink);color:var(--gh-card)!important}
+.mb-gh-card__guias .is-pronto{border-style:dashed;color:var(--gh-muted);border-color:var(--gh-muted)}
+.mb-gh-card__footer{display:flex;align-items:center;gap:12px;margin-top:auto}
+.mb-gh-card__meta{flex:1;font-size:14px;font-weight:600;color:var(--gh-muted)}
+.mb-gh-shop{font-size:14px;font-weight:600;color:var(--gh-ink)!important;text-decoration:none!important;border-bottom:1px solid currentColor}
+.mb-gh-card__btn{display:inline-flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;border-radius:50%;background:var(--gh-ink);color:var(--gh-card)!important;transition:transform .2s ease}
+.mb-gh-card__btn:hover,.mb-gh-card__btn:focus-visible{transform:scale(1.08)}
+.mb-gh-all{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px;padding:18px 24px;border-radius:26px;border:1px solid var(--gh-ink);color:var(--gh-ink)!important;text-decoration:none!important;font-weight:600;transition:background .2s ease,color .2s ease}
+.mb-gh-all small{display:block;font-weight:500;font-size:13px;opacity:.6}
+.mb-gh-all:hover{background:var(--gh-ink);color:var(--gh-card)!important}
+.mb-gh a:focus-visible{outline:2px solid var(--gh-accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.mb-gh *{transition:none!important;animation:none!important}}
+</style>
+<style id="mb-guia-css">
+.mb-guia{--g-card:#f7f7f7;--g-visual:#ececec;--g-ink:#000;--g-muted:#6b6b6b;--g-line:rgba(0,0,0,.1);--g-chip:#fff;--g-accent:hsl(12,85%,58%);--g-ok:hsl(145,55%,38%);margin:0 0 80px}
+body[data-theme="dark"] .mb-guia{--g-card:#262626;--g-visual:#141414;--g-ink:#fffafa;--g-muted:#9a9a9a;--g-line:rgba(255,255,255,.12);--g-chip:#1c1c1c;--g-ok:hsl(145,50%,52%)}
+.mb-guia h2.wp-block-heading{margin:64px 0 14px;font-size:30px;line-height:1.25;scroll-margin-top:110px}
+.mb-guia h3.wp-block-heading{margin:28px 0 10px;font-size:20px}
+.mb-guia p,.mb-guia li{line-height:1.65}
+.mb-guia code{padding:1px 6px;border-radius:6px;background:var(--g-card);font-size:.9em}
+/* Portada */
+.mb-guia-portada{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;aspect-ratio:21/9;min-height:240px;border-radius:26px;background:var(--g-visual);isolation:isolate}
+.mb-guia-portada__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.mb-guia-portada__dibujo{transform:scale(1.5)}
+.mb-guia-portada__etiqueta{position:absolute;left:20px;bottom:16px;margin:0!important;padding:6px 14px;border-radius:40px;background:var(--g-chip);color:var(--g-ink);font-size:13px;font-weight:600}
+.mb-guia-portada__etiqueta span{color:var(--g-accent)}
+/* Fotos del macropad (portada, galería, render y visor) con color apagado y natural, tipo foto de producto.
+   saturate = cuánto color queda (1 = original) · sepia = toque cálido · brightness/contrast = sombras más suaves.
+   Para volver al color original: filter:none */
+.mb-guia,.mb-visor{--g-foto:saturate(.45) sepia(.08) brightness(1.06) contrast(.9)}
+.mb-guia-portada__img,.mb-guia .mb-guia-galeria img,.mb-guia .mb-guia-archivos__render img,.mb-visor img{filter:var(--g-foto)}
+/* Fichas */
+.mb-guia-datos{margin:16px auto 0}
+/* El tema clásico envuelve el contenido de cada grupo en .wp-block-group__inner-container */
+.mb-guia-datos>.wp-block-group__inner-container,.mb-guia-datos:not(:has(>.wp-block-group__inner-container)){display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.mb-guia-datos p{display:flex;flex-direction:column;gap:2px;margin:0!important;padding:16px 18px;border-radius:18px;background:var(--g-card);font-size:22px;font-weight:600;line-height:1.3;color:var(--g-ink)}
+.mb-guia-datos p strong{order:-1;font-size:13px;font-weight:500;color:var(--g-muted)}
+/* Índice */
+.mb-guia-indice{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:20px 0 8px;padding:14px 0;border-top:1px solid var(--g-line);border-bottom:1px solid var(--g-line)}
+.mb-guia-indice strong{margin-right:6px;font-size:14px}
+.mb-guia-indice a{padding:5px 14px;border-radius:40px;background:var(--g-card);color:var(--g-ink)!important;font-size:14px;font-weight:500;text-decoration:none!important}
+.mb-guia-indice a:hover{background:var(--g-ink);color:var(--g-card)!important}
+/* Botones de descarga */
+.mb-guia .wp-block-buttons{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.mb-guia .wp-block-button__link{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:40px;border:1px solid var(--g-ink);background:transparent;color:var(--g-ink)!important;font-size:15px;font-weight:600;text-decoration:none!important;transition:background .2s ease,color .2s ease}
+.mb-guia .wp-block-button__link::after{content:"↗";font-weight:400}
+.mb-guia .wp-block-button__link:hover{background:var(--g-ink);color:var(--g-card)!important}
+.mb-guia .is-style-fill .wp-block-button__link,.mb-guia .wp-block-button:first-child .wp-block-button__link{background:var(--g-ink);color:var(--g-card)!important}
+/* Archivos: lista a la izquierda, render del macropad a la derecha (se apilan en móvil) */
+.mb-guia .mb-guia-archivos{display:grid!important;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:stretch;margin:18px 0 0}
+.mb-guia .mb-guia-archivos>.wp-block-column{min-width:0;margin:0!important;flex-basis:auto!important}
+.mb-guia .mb-guia-archivos .wp-block-buttons{margin:14px 0 0}
+.mb-guia ul.mb-guia-archivos__lista{display:flex;flex-direction:column;gap:8px;margin:0!important}
+.mb-guia ul.mb-guia-archivos__lista li{position:relative;margin:0!important;padding:12px 44px 12px 76px;border-radius:18px;background:var(--g-card);color:var(--g-muted);font-size:14px;line-height:1.45;transition:background .2s ease}
+.mb-guia ul.mb-guia-archivos__lista li:hover{background:color-mix(in srgb,var(--g-ink) 7%,var(--g-card))}
+.mb-guia ul.mb-guia-archivos__lista li::before{content:none}
+.mb-guia ul.mb-guia-archivos__lista li::after{content:"↓";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--g-ink);font-size:17px}
+.mb-guia ul.mb-guia-archivos__lista a{position:static!important;display:block;color:var(--g-ink)!important;font-size:16px;font-weight:600;text-decoration:none!important;overflow-wrap:anywhere}
+/* Toda la fila es clicable; la etiqueta de tipo sale sola de la extensión del enlace */
+.mb-guia ul.mb-guia-archivos__lista a::after{content:"";position:absolute;inset:0;border-radius:18px}
+.mb-guia ul.mb-guia-archivos__lista a::before{content:"ARCH";position:absolute;left:16px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:46px;height:30px;border-radius:9px;background:var(--g-chip);color:var(--g-accent);font-size:11px;font-weight:700;letter-spacing:.04em}
+.mb-guia ul.mb-guia-archivos__lista a[href$=".stl" i]::before{content:"STL"}
+.mb-guia ul.mb-guia-archivos__lista a[href$=".step" i]::before,.mb-guia ul.mb-guia-archivos__lista a[href$=".stp" i]::before{content:"STEP"}
+.mb-guia ul.mb-guia-archivos__lista a[href$=".hex" i]::before{content:"HEX"}
+.mb-guia ul.mb-guia-archivos__lista a[href$=".uf2" i]::before{content:"UF2"}
+.mb-guia ul.mb-guia-archivos__lista a[href$=".json" i]::before{content:"JSON"}
+.mb-guia ul.mb-guia-archivos__lista a[href$=".zip" i]::before{content:"ZIP"}
+.mb-guia ul.mb-guia-archivos__lista a[href*="/actions" i]::before{content:"UF2"}
+.mb-guia ul.mb-guia-archivos__lista a[href$=".keymap" i]::before{content:"ZMK"}
+/* Selector de variantes de montaje: [mb_versiones repo="MB9" actual="PCB"] */
+.mb-guia-versiones{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:8px;margin:12px 0 0}
+.mb-guia-versiones>*{display:flex;flex-direction:column;gap:1px;padding:11px 16px;border-radius:16px;border:1px solid var(--g-line);color:var(--g-ink)!important;font-size:15px;font-weight:600;text-decoration:none!important;transition:border-color .2s ease}
+.mb-guia-versiones small{font-size:12.5px;font-weight:500;color:var(--g-muted)}
+.mb-guia-versiones a:hover{border-color:var(--g-ink)}
+.mb-guia-versiones [aria-current]{border-color:var(--g-ink);background:var(--g-ink);color:var(--g-card)!important}
+.mb-guia-versiones .is-pronto{border-style:dashed;color:var(--g-muted)!important}
+.mb-guia-versiones [aria-current] small{color:color-mix(in srgb,var(--g-card) 70%,transparent)}
+/* Enlace a un producto de la tienda: [mb_guia_producto slug="pcb-mb9i" texto="PCB del MB9i"] */
+.mb-guia .mb-guia-producto{position:relative;display:flex;flex-direction:column;gap:2px;margin:14px 0 4px;padding:14px 48px 14px 18px;border-radius:18px;border:1px solid var(--g-line);background:var(--g-chip);color:var(--g-ink)!important;font-size:16px;font-weight:600;text-decoration:none!important;transition:border-color .2s ease}
+.mb-guia .mb-guia-producto small{font-size:13px;font-weight:500;color:var(--g-accent)}
+.mb-guia .mb-guia-producto.is-pronto small{color:var(--g-muted)}
+.mb-guia .mb-guia-producto::after{content:"→";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:17px}
+.mb-guia .mb-guia-producto:hover{border-color:var(--g-ink)}
+.mb-guia .mb-guia-archivos__render{display:flex}
+.mb-guia .mb-guia-archivos__render>*{flex:1;margin:0!important}
+.mb-guia .mb-guia-archivos__render .mb-foto-pendiente{height:100%;max-height:none;aspect-ratio:auto;min-height:280px}
+.mb-guia .mb-guia-archivos__render figure.wp-block-image{display:flex;overflow:hidden;border-radius:26px;background:var(--g-visual)}
+.mb-guia .mb-guia-archivos__render figure.wp-block-image{align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+.mb-guia .mb-guia-archivos__render figure.wp-block-image img{width:100%;height:100%;min-height:0;max-height:420px;object-fit:contain}
+@media (max-width:780px){.mb-guia .mb-guia-archivos{grid-template-columns:1fr}.mb-guia .mb-guia-archivos__render{order:-1}.mb-guia .mb-guia-archivos__render .mb-foto-pendiente{min-height:0;aspect-ratio:4/3}.mb-guia .mb-guia-archivos__render figure.wp-block-image img{max-height:300px}}
+/* Tablas */
+.mb-guia-tabla{overflow-x:auto;margin:16px 0;border-radius:18px;background:var(--g-card)}
+.mb-guia-tabla table{width:100%;margin:0!important;border-collapse:collapse;font-size:15px}
+.mb-guia-tabla th,.mb-guia-tabla td{padding:11px 18px;border:0!important;border-bottom:1px solid var(--g-line)!important;text-align:left;vertical-align:top;background:none!important}
+.mb-guia-tabla tr:last-child td{border-bottom:0!important}
+.mb-guia-tabla thead th{font-size:13px;font-weight:600;color:var(--g-muted)}
+.mb-guia-tabla td:first-child{font-weight:500}
+/* Recuadros (p. ej. Electrónica y piezas, Herramientas): grupo con clase mb-guia-recuadro */
+.mb-guia .mb-guia-recuadro{margin:18px 0 0;padding:22px 26px 16px;border-radius:26px;background:var(--g-card);border:1px solid var(--g-line)}
+.mb-guia .mb-guia-recuadro h3.wp-block-heading{display:flex;align-items:center;gap:10px;margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--g-line)}
+.mb-guia .mb-guia-recuadro h3.wp-block-heading::before{content:"";flex:none;width:8px;height:22px;border-radius:4px;background:var(--g-accent)}
+.mb-guia .mb-guia-recuadro .wp-block-list{margin:0!important}
+.mb-guia .mb-guia-recuadro .wp-block-list li{margin:0 0 10px!important;padding-left:0}
+.mb-guia .mb-guia-recuadro .wp-block-list li:has(>strong:first-child)::before{content:none}
+.mb-guia .mb-guia-recuadro .wp-block-list li strong:first-child{min-width:44px;margin-right:4px;padding:1px 8px;border-radius:40px;background:var(--g-chip);font-size:13px;text-align:center}
+@media (max-width:640px){.mb-guia .mb-guia-recuadro{padding:18px 18px 10px}}
+/* Características: grupo con clase mb-guia-features; cada grupo hijo es una tarjeta (título h3 + párrafo) */
+.mb-guia-features{margin:18px 0 0}
+.mb-guia-features>.wp-block-group__inner-container,.mb-guia-features:not(:has(>.wp-block-group__inner-container)){display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px}
+.mb-guia .mb-guia-features .wp-block-group{margin:0;padding:22px 24px;border-radius:22px;background:var(--g-card)}
+.mb-guia .mb-guia-features h3.wp-block-heading{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:19px}
+.mb-guia .mb-guia-features h3.wp-block-heading::before{content:"";flex:none;width:8px;height:20px;border-radius:4px;background:var(--g-accent)}
+.mb-guia .mb-guia-features p{margin:0!important;color:var(--g-muted);font-size:15px;line-height:1.55}
+/* En detalle: Columnas con clase mb-guia-detalle (foto + texto). Añade mb-guia-detalle--invertido para poner la foto a la derecha
+   y mb-guia-detalle--render si la imagen es un render con fondo transparente (se ve completa, sin recortar). */
+.mb-guia .mb-guia-detalle{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center;margin:28px 0 0}
+.mb-guia .mb-guia-detalle>.wp-block-column{min-width:0;margin:0!important;flex-basis:auto!important}
+.mb-guia .mb-guia-detalle--invertido>.wp-block-column:first-child{order:2}
+.mb-guia .mb-guia-detalle figure.wp-block-image{margin:0;overflow:hidden;border-radius:26px;background:var(--g-visual)}
+.mb-guia .mb-guia-detalle figure.wp-block-image img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:var(--g-foto)}
+.mb-guia .mb-guia-detalle--render figure.wp-block-image{padding:24px;box-sizing:border-box}
+.mb-guia .mb-guia-detalle--render figure.wp-block-image img{object-fit:contain}
+.mb-guia .mb-guia-detalle h3.wp-block-heading{margin:0 0 10px;font-size:24px}
+@media (max-width:780px){.mb-guia .mb-guia-detalle{grid-template-columns:1fr;gap:16px}.mb-guia .mb-guia-detalle--invertido>.wp-block-column:first-child{order:0}}
+/* Listas con cantidades: **x9** Switches */
+.mb-guia .wp-block-list{padding-left:0!important;list-style:none!important}
+.mb-guia .wp-block-list li{position:relative;margin:0 0 6px!important;padding-left:18px}
+.mb-guia .wp-block-list li::before{content:"";position:absolute;left:2px;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--g-accent)}
+.mb-guia .wp-block-list li strong:first-child{display:inline-block;min-width:34px;color:var(--g-ink)}
+/* Fotos de cada paso */
+.mb-foto-pendiente{display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;max-height:420px;width:100%;margin:0 0 20px;border:2px dashed var(--g-line);border-radius:18px;background:var(--g-visual);color:var(--g-muted);font-size:14px;font-weight:600;letter-spacing:.02em}
+.mb-foto-pendiente::before{content:"";width:26px;height:26px;margin-right:10px;opacity:.6;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Ccircle cx='12' cy='12' r='3.5'/%3E%3Cpath d='M8 5l1.5-2h5L16 5'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Ccircle cx='12' cy='12' r='3.5'/%3E%3Cpath d='M8 5l1.5-2h5L16 5'/%3E%3C/svg%3E") center/contain no-repeat}
+/* Galería del macropad: Galería con clase mb-guia-galeria (2 columnas; en móvil, fila deslizable). Clic = ampliar */
+.mb-guia .mb-guia-galeria{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px!important;margin:18px auto 0!important}
+.mb-guia .mb-guia-galeria>figure.wp-block-image{width:auto!important;margin:0!important;overflow:hidden;border-radius:18px;background:var(--g-visual)}
+.mb-guia .mb-guia-galeria a{display:block;height:100%}
+.mb-guia .mb-guia-galeria img{display:block;width:100%!important;height:100%!important;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in;transition:transform .35s ease}
+.mb-guia .mb-guia-galeria>figure:hover img{transform:scale(1.03)}
+/* Si hay un número impar de fotos, la primera ocupa todo el ancho para que no quede un hueco */
+.mb-guia .mb-guia-galeria>figure:first-child:nth-last-child(odd){grid-column:1/-1}
+.mb-guia .mb-guia-galeria>figure:first-child:nth-last-child(odd) img{aspect-ratio:3/2}
+@media (max-width:640px){.mb-guia .mb-guia-galeria{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.mb-guia .mb-guia-galeria>figure.wp-block-image{flex:0 0 86%!important;scroll-snap-align:start}}
+.mb-visor{width:min(1400px,94vw);max-width:none;max-height:none;margin:auto;padding:0;border:0;background:transparent;overflow:visible}
+.mb-visor::backdrop{background:rgba(0,0,0,.88)}
+.mb-visor img{display:block;max-width:100%;max-height:84vh;margin:0 auto;border-radius:14px}
+.mb-visor p{margin:12px 0 0;text-align:center;color:#ddd;font-size:14px}
+.mb-visor button{position:fixed;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font:inherit;font-size:20px;cursor:pointer}
+.mb-visor button:hover{background:rgba(255,255,255,.28)}
+.mb-visor .mb-visor__cerrar{top:18px;right:18px}
+.mb-visor .mb-visor__ant{left:18px;top:50%;transform:translateY(-50%)}
+.mb-visor .mb-visor__sig{right:18px;top:50%;transform:translateY(-50%)}
+.mb-paso .wp-block-gallery{display:flex!important;flex-wrap:nowrap!important;gap:10px!important;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 0 20px;padding-bottom:6px}
+.mb-paso .wp-block-gallery>figure.wp-block-image{flex:0 0 min(86%,640px)!important;width:auto!important;margin:0!important;scroll-snap-align:start}
+.mb-paso .wp-block-gallery img,.mb-paso figure.wp-block-image img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:18px}
+.mb-paso figure.wp-block-image{margin:0 0 20px}
+/* Pasos */
+.mb-pasos{margin:20px 0 0}
+.mb-paso{padding:26px 28px;border-radius:26px;background:var(--g-card);margin:0 0 18px}
+.mb-paso h3.wp-block-heading{margin:0 0 10px;font-size:24px}
+.mb-paso h4.wp-block-heading{margin:20px 0 8px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--g-muted)}
+.mb-paso .mb-guia-tabla{background:var(--g-chip)}
+.mb-paso__num{margin:0 0 6px!important;font-size:13px;font-weight:600;color:var(--g-accent)}
+.mb-paso.is-hecho .mb-paso__num::after{content:" · Hecho ✓";color:var(--g-ok)}
+.mb-pasos.is-activo .mb-paso{display:none;margin:0}
+.mb-pasos.is-activo .mb-paso.is-actual{display:block;animation:mb-paso-in .25s ease}
+@keyframes mb-paso-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.mb-pasos__cabecera{display:flex;flex-direction:column;gap:12px;margin:0 0 16px}
+.mb-pasos__progreso{display:flex;align-items:center;gap:14px;font-size:14px;font-weight:600;color:var(--g-muted)}
+.mb-pasos__barra{flex:1;height:6px;border-radius:6px;background:var(--g-line);overflow:hidden}
+.mb-pasos__barra i{display:block;height:100%;width:0;border-radius:6px;background:var(--g-ok);transition:width .3s ease}
+.mb-pasos__indice{display:flex;align-items:center;gap:8px}
+.mb-pasos__lista{display:flex;gap:6px;overflow-x:auto;scroll-behavior:smooth;padding:3px;margin:0!important;list-style:none!important;scrollbar-width:none}
+.mb-pasos__lista::-webkit-scrollbar{display:none}
+.mb-pasos__lista li{margin:0!important;padding:0!important}
+.mb-pasos__lista li::before,.mb-pasos__lista li::marker{content:none}
+.mb-pasos button{font:inherit;cursor:pointer}
+.mb-pasos__lista button{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 10px;border-radius:40px;border:1px solid var(--g-line);background:var(--g-card);color:var(--g-ink);font-size:14px;font-weight:600}
+.mb-pasos__lista button.is-hecho{border-color:transparent;background:color-mix(in srgb,var(--g-ok) 18%,var(--g-card));color:var(--g-ok)}
+.mb-pasos__lista button[aria-current="step"]{border-color:var(--g-ink);background:var(--g-ink);color:var(--g-card)}
+.mb-pasos__flecha{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--g-line);background:transparent;color:var(--g-ink);font-size:16px}
+.mb-paso__pie{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:26px;padding-top:18px;border-top:1px solid var(--g-line)}
+.mb-paso__pie button{padding:11px 20px;border-radius:40px;border:1px solid var(--g-ink);background:transparent;color:var(--g-ink);font-size:15px;font-weight:600}
+.mb-paso__pie button.mb-paso__hecho{margin-left:auto;background:var(--g-ink);color:var(--g-card)}
+.mb-paso__pie button:disabled{visibility:hidden}
+.mb-pasos__fin{display:none;margin:0 0 18px;padding:26px 28px;border-radius:26px;background:color-mix(in srgb,var(--g-ok) 14%,var(--g-card));color:var(--g-ink);font-weight:600}
+.mb-pasos.is-terminado .mb-pasos__fin{display:block}
+.mb-pasos__reiniciar{margin-left:10px;padding:0;border:0;background:none;color:var(--g-muted);font-size:14px;text-decoration:underline}
+.mb-guia a:focus-visible,.mb-guia button:focus-visible{outline:2px solid var(--g-accent);outline-offset:3px}
+@media (max-width:640px){.mb-paso{padding:20px 18px}.mb-guia h2.wp-block-heading{font-size:25px}.mb-guia-portada{aspect-ratio:4/3}.mb-guia-portada__dibujo{transform:translateY(-14px)}.mb-paso__pie button{flex:1}}
+@media (prefers-reduced-motion:reduce){.mb-guia *{transition:none!important;animation:none!important}}
+</style>
+<style id="mb-wa-css">
+.mb-wa-btn{display:inline-flex;align-items:center;gap:.5em;background:#25D366;color:#fff!important;border-radius:999px;padding:.7em 1.4em;font-weight:600;line-height:1;text-decoration:none!important;transition:filter .2s}
+.mb-wa-btn:hover,.mb-wa-btn:focus-visible{filter:brightness(.92)}
+.mb-wa-btn:focus-visible{outline:2px solid #128C7E;outline-offset:2px}
+.mb-wa-btn--loop{padding:.55em 1em;font-size:.85em}
+.ms-product .ms-product-footer .ms-product-link a.mb-wa-btn{display:flex!important;align-items:center;justify-content:center;width:36px;height:36px;padding:0;margin:0;border-radius:50%!important;background:#25D366!important;font-size:0;line-height:0;position:relative}
+.ms-product .ms-product-footer .ms-product-link a.mb-wa-btn.mb-wa-btn--soldout{background:#5f6b66!important}
+.ms-product .ms-product-footer .ms-product-link a.mb-wa-btn::before,.ms-product .ms-product-footer .ms-product-link a.mb-wa-btn::after{display:none!important;content:none!important}
+.ms-product .ms-product-footer .ms-product-link a.mb-wa-btn svg{width:18px;height:18px;display:block;flex:none;margin:0}
+.ms-product .ms-product-footer .ms-product-link a.mb-wa-btn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.row>[class*="col-"]>article.ms-product{height:calc(100% - 24px);flex-direction:column}
+.row>[class*="col-"]>article.ms-product .ms-product-content{flex:1 1 auto;display:flex;flex-direction:column}
+.row>[class*="col-"]>article.ms-product .ms-product-title a{line-height:inherit}
+.row>[class*="col-"]>article.ms-product .ms-product-title{line-height:1.3;height:2.6em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+.row>[class*="col-"]>article.ms-product .ms-product-footer{margin-top:auto}
+.mb-wa-btn--soldout{background:#5f6b66}
+.mb-wa-wrap{margin:1.5em 0}
+.mb-soldout{color:#c0392b;font-weight:600;margin-bottom:.75em}
+.mb-variations{margin-bottom:1em}
+.mb-contact-wa{display:flex;flex-direction:column;align-items:flex-start;gap:.75em}
+.mb-contact-wa__num{opacity:.75;margin:0}
+</style>
+<style id="kirki-inline-styles">:root{--main-header-width-md:1320px;--font-primary:Plus Jakarta Sans;--font-heading:Plus Jakarta Sans;}.main-header__logo a, .main-header__logo svg, .main-header__logo img{height:50px;}:root, [data-theme="light"]{--color-primary:hsl(12, 85%, 58%);--color-contrast-higher:hsl(0, 0%, 0%);--color-contrast-high:hsl(0, 0%, 17%);--color-contrast-medium:hsl(0, 0%, 46%);--color-contrast-low:hsl(0, 0%, 91%);--color-contrast-lower:hsl(0, 0%, 97%);--color-bg:hsl(0, 0%, 100%);}body[data-theme=light] .ms-footer{background-color:#f7f7f7;}:root, [data-theme="dark"]{--color-primary:hsl(12, 85%, 58%);--color-contrast-higher:hsl(0, 100%, 99%);--color-contrast-high:hsl(0, 0%, 81%);--color-contrast-medium:hsl(0, 0%, 57%);--color-contrast-low:hsl(0, 0%, 22%);--color-contrast-lower:hsl(0, 0%, 15%);--color-bg:hsl(0, 0%, 11%);}body[data-theme=dark] .ms-footer{background-color:hsl(0, 0%, 15%);}</style></head>
+
+<body class="wp-singular page-template-default page page-id-7826 page-child parent-pageid-7735 wp-custom-logo wp-embed-responsive wp-theme-most theme-most woocommerce-no-js elementor-default elementor-kit-1728" data-theme="light"
+ data-menu="fixed"
+ data-footer-effect="on"
+ data-footer-corners="on">
+    <script id="mb-theme-mode">(function(){try{var b=document.body,m=null;try{m=localStorage.getItem('theme-mode');}catch(e){}
+if(m!=='dark'&&m!=='light'){var c=document.cookie.match(/(?:^|;\s*)theme-mode=(light|dark)/);m=c?c[1]:null;}
+if(m){b.setAttribute('data-theme',m);}
+document.addEventListener('DOMContentLoaded',function(){var s=document.getElementById('switcher');if(s){s.checked=b.getAttribute('data-theme')==='light';}
+new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStorage.setItem('theme-mode',t);}catch(e){}document.cookie='theme-mode='+t+';max-age=31536000;path=/';}).observe(b,{attributes:true,attributeFilter:['data-theme']});});}catch(e){}})();</script>
+<div id="loaded"></div>
+<div class="main-header js-main-header auto-hide-header menu-center" data-blur=on>
+
+	<div class="main-header__layout">
+		<div class="main-header__inner">
+			<div class="main-header__logo">
+				<div class="logo-dark">
+											<a href="../../">
+							<img src="../../wp-content/uploads/2020/10/cropped-logo_modboxbow-e1690565366144-1.webp" alt="MODBOX">
+						</a>
+									</div>
+				<div class="logo-light">
+											<a href="../../">
+							<img src="../../wp-content/uploads/2024/06/logo_modbox.webp" alt="MODBOX">
+						</a>
+									</div>
+			</div>
+
+			<nav class="main-header__nav js-main-header__nav main-header__default" id="main-header-nav" aria-labelledby="primary-menu">
+    <ul id="primary-menu" class="navbar-nav"><li id="menu-item-64" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-64"><a href="../../">Home</a></li>
+<li id="menu-item-169" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-169"><a href="../../blog-list/">Blog</a></li>
+<li id="menu-item-6898" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6898"><a href="../../home-portfolio/">Portafolio</a></li>
+<li id="menu-item-7736" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-7736"><a href="../">Macropad</a></li>
+<li id="menu-item-769" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-769"><a href="../../contact/">Contacto</a></li>
+<li id="menu-item-2516" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2516"><a href="../../shop/">Tienda</a>
+<ul class="sub-menu">
+	<li id="menu-item-7451" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7451"><a href="../../refund_returns/">Política de Devoluciones y Reembolsos</a></li>
+</ul>
+</li>
+</ul></nav>
+<div class="menuTrigger"></div>
+			<div class="main-header--widgets">
+						
+				<div class="ms_theme_mode">
+    <div class="ms_tm--inner">
+        <div class="theme-toggle" id="theme-toggle">
+            <input type="checkbox" id="switcher" class="check" checked>
+                <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                    <mask class="moon" id="moon-mask">
+                        <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
+                        <circle cx="24" cy="10" r="6" fill="black"></circle>
+                    </mask>
+                    <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor"></circle>
+                    <g class="sun-beams" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </g>
+                </svg>
+        </div>
+    </div>
+</div>
+
+			</div>
+
+			<button class="main-header__nav-trigger js-main-header__nav-trigger menu-default" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-header-nav">
+				<span>Menú</span>
+				<i class="main-header__nav-trigger-icon" aria-hidden="true"></i>
+			</button>
+
+		</div>
+	</div>
+	
+</div>
+<main class="ms-main">
+
+    <div class="ms-page-content">
+
+        
+<article id="post-7826" class="post-7826 page type-page status-publish has-post-thumbnail hentry">
+
+	<header class="ms-sp--header container">
+					<h1 class="ms-sp--title">Guía de fabricación MB9i con PCB</h1>			</header>
+
+	<div class="ms-default-page container entry-content">
+
+		<div class="wp-block-group mb-guia"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-guia-portada"><img fetchpriority="high" decoding="async" width="1248" height="832" src="../../wp-content/uploads/2026/11/mb9-render.webp" class="mb-guia-portada__img wp-post-image" alt="MB9i flotando, con keycaps blancas y la frase Code. Press. Repeat" loading="eager" style="object-position:50% 50%" /><p class="mb-guia-portada__etiqueta">Guía de fabricación · PCB <span>· ZMK · Bluetooth</span></p></div>
+
+<div class="wp-block-group mb-guia-datos"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><p><strong>Conexión</strong>Bluetooth</p><p><strong>Controlador</strong>nice!nano v2</p><p><strong>Firmware</strong>ZMK</p><p><strong>Montaje</strong>9 pasos</p></div></div>
+
+<nav class="mb-guia-versiones" aria-label="Variantes de montaje"><a href="../mb9i-handwired/">MB9i Handwired<small>Cableado a mano, sin PCB</small></a><span aria-current="page">MB9i PCB<small>Matriz y diodos en la placa</small></span></nav>
+
+<nav class="mb-guia-indice" aria-label="En esta guía"><strong>En esta guía</strong><a href="./#versiones">¿Handwired o PCB?</a><a href="./#galeria">Galería</a><a href="./#archivos">Archivos</a><a href="./#componentes">Componentes</a><a href="./#montaje">Montaje</a><a href="./#leds">LEDs de estado</a></nav>
+
+<p>El MB9i es la versión <strong>inalámbrica</strong> del <a href="../mb9/">MB9</a>: el mismo macropad de 9 teclas (3×3), con un nice!nano v2 que se conecta por <strong>Bluetooth</strong> o por USB-C. Esta guía es para la variante <strong>con PCB</strong>, la misma placa del <a href="../mb9-pcb/">MB9 con PCB</a>: la matriz y los diodos ya vienen en ella.</p>
+
+<p>La gran diferencia está en el firmware: el MB9 usa QMK y se configura con VIA; el MB9i usa <strong>ZMK</strong>, pensado para teclados inalámbricos y de bajo consumo, y su keymap se edita en vivo con <strong>ZMK Studio</strong>. Además puedes añadirle, si quieres, una cinta de dos LEDs que indican la batería y la conexión.</p>
+
+<h2 class="wp-block-heading" id="versiones">¿Handwired o PCB?</h2>
+
+<div class="mb-guia-tabla"><table><thead><tr><th></th><th>MB9i Handwired</th><th>MB9i PCB · esta guía</th></tr></thead><tbody><tr><td>Montaje</td><td>Cables y diodos a mano</td><td>Sobre PCB</td></tr><tr><td>Qué se suelda</td><td>Diodos, filas, columnas, nice!nano y batería</td><td>nice!nano y switches</td></tr><tr><td>Dificultad</td><td>Media: muchas soldaduras pequeñas</td><td>Baja: pocas soldaduras</td></tr><tr><td>Controlador</td><td>nice!nano v2</td><td>nice!nano v2</td></tr><tr><td>Conexión</td><td>Bluetooth y USB-C</td><td>Bluetooth y USB-C</td></tr><tr><td>Batería</td><td>LiPo 3.7 V soldada a B+ / B−, con interruptor</td><td>LiPo 3.7 V al conector JST de la PCB</td></tr><tr><td>LEDs de estado</td><td>Cinta ARGB opcional</td><td>Cinta ARGB opcional</td></tr><tr><td>Firmware</td><td>ZMK · ZMK Studio</td><td>ZMK · ZMK Studio</td></tr><tr><td>Carcasa</td><td>Base.stl + Tapa.stl</td><td>mb9_v3_base.step</td></tr></tbody></table></div>
+
+<h2 class="wp-block-heading" id="galeria">Galería</h2>
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped mb-guia-galeria wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex"><figure class="wp-block-image size-large"><a href="../../wp-content/uploads/2026/11/mb9-render.webp"><img decoding="async" width="1024" height="683" data-id="7807" src="../../wp-content/uploads/2026/11/mb9-render-1024x683.webp" alt="MB9i flotando, con keycaps blancas y la frase Code. Press. Repeat" class="wp-image-7807"/></a></figure><figure class="wp-block-image size-large"><a href="../../wp-content/uploads/2026/11/mb9-escritorio.webp"><img decoding="async" width="1024" height="683" data-id="7806" src="../../wp-content/uploads/2026/11/mb9-escritorio-1024x683.webp" alt="MB9i en un escritorio con luces RGB, frente al teclado" class="wp-image-7806"/></a></figure><figure class="wp-block-image size-large"><a href="../../wp-content/uploads/2026/11/mb9-vista-superior.webp"><img decoding="async" width="1024" height="712" data-id="7808" src="../../wp-content/uploads/2026/11/mb9-vista-superior-1024x712.webp" alt="MB9i visto desde arriba, con sus nueve teclas" class="wp-image-7808"/></a></figure><figure class="wp-block-image size-large"><a href="../../wp-content/uploads/2026/11/mb9-vista-inferior.webp"><img loading="lazy" decoding="async" width="1024" height="712" data-id="7809" src="../../wp-content/uploads/2026/11/mb9-vista-inferior-1024x712.webp" alt="Parte inferior de la PCB del MB9 y MB9i: el controlador va soldado bajo la placa" class="wp-image-7809"/></a></figure></figure>
+
+<h2 class="wp-block-heading" id="archivos">Archivos</h2>
+
+<p>La configuración ZMK del MB9i es abierta y se compila sola en GitHub. La carcasa es la misma del MB9 en su versión con PCB.</p>
+
+<div class="wp-block-columns mb-guia-archivos is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex"><div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><ul class="wp-block-list mb-guia-archivos__lista"><li><a href="https://github.com/modboxCo/zmk-config-mb9i/actions" target="_blank" rel="noreferrer noopener">firmware (mb9i.uf2)</a> Firmware ZMK compilado, en la pestaña Actions del repo</li><li><a href="https://github.com/modboxCo/zmk-config-mb9i/blob/main/config/boards/shields/mb9i/mb9i.keymap" target="_blank" rel="noreferrer noopener">mb9i.keymap</a> Keymap: capas, macros y perfiles Bluetooth</li><li><a href="https://github.com/modboxCo/MB9/raw/main/3dmodel/pcbmode/mb9_v3_base.step" target="_blank" rel="noreferrer noopener">mb9_v3_base.step</a> Carcasa para la versión con PCB</li><li><a href="https://github.com/modboxCo/MB9/raw/main/3dmodel/keycap.stl" target="_blank" rel="noreferrer noopener">keycap.stl</a> Keycap MX opcional, imprime 9</li></ul><div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex"><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/modboxCo/zmk-config-mb9i" target="_blank" rel="noreferrer noopener">Repositorio en GitHub</a></div></div><a class="mb-guia-producto" href="../../producto/mb9-pcb/">PCB del MB9 y MB9i<small>Ver en la tienda</small></a></div><div class="wp-block-column mb-guia-archivos__render is-layout-flow wp-block-column-is-layout-flow"><figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="712" src="../../wp-content/uploads/2026/11/mb9-vista-inferior-1024x712.webp" alt="Parte inferior de la PCB del MB9 y MB9i: el controlador va soldado bajo la placa" class="wp-image-7809"/></figure></div></div>
+
+<ul class="wp-block-list"><li>PrusaSlicer, Bambu Studio y OrcaSlicer abren el archivo STEP directamente; no hace falta convertirlo a STL.</li><li>Para bajar el firmware de Actions necesitas iniciar sesión en GitHub.</li></ul>
+
+<h2 class="wp-block-heading" id="componentes">Componentes y herramientas</h2>
+
+<div class="wp-block-group mb-guia-recuadro"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><h3 class="wp-block-heading">Electrónica y piezas</h3><ul class="wp-block-list"><li><strong>x1</strong> PCB del MB9 y MB9i (diodos ya soldados)</li><li><strong>x1</strong> nice!nano v2 (con sus dos tiras de pines)</li><li><strong>x9</strong> Switches MX</li><li><strong>x9</strong> Keycaps MX (o imprímelas con keycap.stl)</li><li><strong>x1</strong> Batería LiPo de 3.7 V con conector JST</li><li><strong>x1</strong> Cable USB-C de datos</li><li><strong>x1</strong> Cinta de 2 LEDs ARGB WS2812B o SK6812 (opcional)</li><li><strong>x15 cm</strong> Cable fino para la cinta (opcional)</li><li><strong>x4</strong> Patas antideslizantes (opcional)</li></ul><a class="mb-guia-producto" href="../../producto/mb9-pcb/">PCB del MB9 y MB9i<small>Ver en la tienda</small></a></div></div>
+
+<div class="wp-block-group mb-guia-recuadro"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><h3 class="wp-block-heading">Herramientas</h3><ul class="wp-block-list"><li><strong>x1</strong> Soldador y estaño</li><li><strong>x1</strong> Pinzas de corte</li><li><strong>x1</strong> Pinza metálica o un trozo de cable (para probar)</li><li><strong>x1</strong> Multímetro (recomendado)</li></ul></div></div>
+
+<h2 class="wp-block-heading" id="montaje">Montaje paso a paso</h2>
+
+<p>Cada paso indica lo que necesitas y las piezas impresas que usa. Marca cada paso como hecho y la guía recordará tu avance en este navegador.</p>
+
+<div class="wp-block-group mb-pasos"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Imprime la carcasa</h3><p>Imprime la base <a href="https://github.com/modboxCo/MB9/raw/main/3dmodel/pcbmode/mb9_v3_base.step">mb9_v3_base.step</a> y, si quieres keycaps propias, nueve <a href="https://github.com/modboxCo/MB9/raw/main/3dmodel/keycap.stl">keycap.stl</a>. Es la misma carcasa del MB9 con PCB.</p><p>Mientras imprime, revisa la PCB: ubica en la serigrafía dónde va el nice!nano, el conector de la batería y el interruptor.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x1</strong> Impresora 3D</li><li>PLA</li></ul><h4 class="wp-block-heading">Piezas impresas</h4><ul class="wp-block-list"><li>Base</li><li>Keycap ×9 (opcional)</li></ul></div></div>
+
+<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Suelda el nice!nano</h3><p>Pon las dos tiras de pines en la PCB, apoya el nice!nano encima con la orientación que marca la serigrafía y suelda primero un pin de cada esquina. Revisa que quede plano y suelda el resto, por los dos lados.</p><p>Corta los pines sobrantes al ras de la cara donde van los switches, para que no toquen nada al montarlos.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x1</strong> nice!nano v2</li><li><strong>x1</strong> Soldador y estaño</li><li><strong>x1</strong> Pinzas de corte</li></ul></div></div>
+
+<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Carga el firmware y prueba</h3><p>Descarga el firmware desde la pestaña <a href="https://github.com/modboxCo/zmk-config-mb9i/actions" target="_blank" rel="noopener">Actions</a> del repo: abre la compilación más reciente con ✓, baja el artefacto <em>firmware</em> y descomprímelo para obtener el archivo <code>.uf2</code>.</p><p>Conecta el nice!nano por USB y puentea dos veces seguidas los pines <strong>RST</strong> y <strong>GND</strong>. Aparece una unidad llamada <strong>NICENANO</strong>: arrastra el <code>.uf2</code> dentro. Se desconecta sola cuando termina.</p><p>Antes de poner los switches, prueba la matriz: con el USB conectado, puentea con la pinza los dos pads de cada switch. la tecla superior izquierda debe bajar el volumen y la superior del centro, subirlo; si una no responde, revisa sus soldaduras ahora que es fácil.</p><p>Ojo: el firmware publicado trae los atajos de <strong>macOS</strong>. Para Windows, haz un fork del repo y cambia la plataforma en <code>build.yaml</code>, como explica el <a href="https://github.com/modboxCo/zmk-config-mb9i#-plataforma-windows--macos" target="_blank" rel="noopener">README</a>.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x1</strong> Cable USB-C de datos</li><li><strong>x1</strong> Pinza metálica o cable</li></ul></div></div>
+
+<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Suelda los switches</h3><p>Inserta los nueve switches desde la cara superior de la PCB, con todos los pines bien metidos. Suelda un pin de cada uno, revisa que estén rectos y alineados, y suelda el resto.</p><p>Vuelve a conectar por USB y presiona las nueve teclas para comprobar que todas responden.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x9</strong> Switches MX</li><li><strong>x1</strong> Soldador y estaño</li></ul></div></div>
+
+<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Añade la cinta LED (opcional)</h3><p>Los LEDs de estado son opcionales y no vienen en la PCB: son una cinta ARGB de dos LEDs que pegas donde más te guste dentro de la carcasa, por ejemplo donde se vea a través de la base. Si no la vas a usar, salta este paso.</p><p>Corta un tramo de <strong>dos LEDs</strong> y suelda tres cables desde el lado de <strong>entrada</strong> de la cinta (la flecha impresa apunta hacia el resto de la cinta, o la marca <code>DIN</code>) a estos pines del nice!nano:</p><div class="mb-guia-tabla"><table><thead><tr><th>Cinta LED</th><th>Pin del nice!nano</th></tr></thead><tbody><tr><td><code>DIN</code> (datos)</td><td><strong>2 · SDA</strong> (P0.17)</td></tr><tr><td><code>5V</code> / <code>VCC</code></td><td><strong>VCC</strong></td></tr><tr><td><code>GND</code></td><td><strong>GND</strong></td></tr></tbody></table></div><p>El primer LED de la cadena indica la batería y el segundo la conexión. Si pones más de dos LEDs, solo se encienden los dos primeros. Pega la cinta y deja los cables con holgura para cerrar la carcasa.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x1</strong> Cinta de 2 LEDs ARGB</li><li><strong>x15 cm</strong> Cable fino</li><li><strong>x1</strong> Soldador y estaño</li></ul></div></div>
+
+<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Conecta la batería</h3><p>Pon el interruptor en <strong>apagado</strong> antes de conectar la batería.</p><p>Los conectores JST no tienen una polaridad estándar: antes de enchufarla, revisa que el cable rojo (+) de la batería coincida con el <strong>+</strong> marcado en la PCB. Si no coincide, no la fuerces; una batería al revés puede dañar el nice!nano.</p><p>La batería se carga por el mismo USB-C, con el interruptor encendido.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x1</strong> Batería LiPo 3.7 V con JST</li><li><strong>x1</strong> Multímetro (recomendado)</li></ul></div></div>
+
+<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Cierra el MB9i</h3><p>Coloca la PCB en la base con el puerto USB-C alineado con su abertura y acomoda la batería sin que quede aplastada ni toque las soldaduras.</p><p>Pon las keycaps y, si quieres, las patas antideslizantes debajo de la base.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x9</strong> Keycaps MX</li><li><strong>x4</strong> Patas antideslizantes (opcional)</li></ul><h4 class="wp-block-heading">Piezas impresas</h4><ul class="wp-block-list"><li>Base</li><li>Keycap ×9 (opcional)</li></ul></div></div>
+
+<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Empareja por Bluetooth</h3><p>Enciende el MB9i. El LED de conexión parpadea en azul mientras busca equipo: en el Bluetooth de tu computador, celular o tablet aparece como <strong>MB9i</strong>.</p><p>Puede recordar hasta cinco equipos, uno por perfil. Para cambiar de perfil o borrar uno, mantén presionada la tecla inferior derecha y pulsa:</p><div class="mb-guia-tabla"><table><thead><tr><th>Mantén la tecla inferior derecha y pulsa…</th><th>Acción</th></tr></thead><tbody><tr><td>Superior izquierda</td><td>Borrar el perfil Bluetooth actual</td></tr><tr><td>Superior centro</td><td>Perfil 1</td></tr><tr><td>Superior derecha</td><td>Perfil 2</td></tr><tr><td>Media izquierda</td><td>Perfil 3</td></tr><tr><td>Media centro</td><td>Perfil 4</td></tr><tr><td>Media derecha</td><td>Perfil 5</td></tr><tr><td>Inferior izquierda</td><td>Desbloquear ZMK Studio</td></tr><tr><td>Inferior centro</td><td>Modo de carga de firmware (bootloader)</td></tr></tbody></table></div></div></div>
+
+<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Personaliza con ZMK Studio</h3><p>Conecta el MB9i por USB y abre <a href="https://zmk.studio/" target="_blank" rel="noopener">zmk.studio</a> en Chrome o Edge. Para que te deje editar, desbloquéalo: mantén la tecla inferior derecha y pulsa la inferior izquierda.</p><p>Desde ahí cambias teclas, atajos y capas en vivo, sin volver a cargar firmware. Si te queda alguna duda, escríbenos por <a href="https://wa.me/573186166449" target="_blank" rel="noopener">WhatsApp</a>.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x1</strong> Cable USB-C de datos</li></ul></div></div></div></div>
+
+<h2 class="wp-block-heading" id="leds">LEDs de estado</h2>
+
+<p>Si añadiste la cinta LED, sus dos LEDs funcionan como indicadores. Se apagan cuando el macropad entra en reposo, para ahorrar batería.</p>
+
+<div class="mb-guia-tabla"><table><thead><tr><th>LED 1 · Batería</th><th>Color</th></tr></thead><tbody><tr><td>Más del 50 %</td><td>Verde</td></tr><tr><td>Entre 20 y 50 %</td><td>Amarillo</td></tr><tr><td>Entre 10 y 20 %</td><td>Rojo</td></tr><tr><td>Menos del 10 %</td><td>Rojo parpadeante</td></tr></tbody></table></div>
+
+<div class="mb-guia-tabla"><table><thead><tr><th>LED 2 · Conexión</th><th>Color</th></tr></thead><tbody><tr><td>USB</td><td>Blanco</td></tr><tr><td>Bluetooth conectado</td><td>Azul</td></tr><tr><td>Emparejando</td><td>Azul parpadeante</td></tr><tr><td>Bluetooth desconectado</td><td>Magenta</td></tr></tbody></table></div>
+
+<p>Cada vez que presionas una tecla, el LED 2 da un destello doble como confirmación: <strong>cian</strong> en la capa normal y <strong>violeta</strong> en la capa de Bluetooth.</p></div></div>
+		<div class="clearfix"></div>
+
+				
+	</div>
+
+		
+</article>
+    </div>
+
+</main>
+
+
+  <div class="back-to-top js-back-to-top">
+    <div class="ms-btt--inner">
+      <svg class="ms-btt-i" enable-background="new 0 0 96 96" height="96px" id="arrow_up" version="1.1" viewBox="0 0 96 96" width="96px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path d="M52,84V21.656l21.457,21.456c1.561,1.562,4.095,1.562,5.656,0.001c1.562-1.562,1.562-4.096,0-5.658L50.829,9.172l0,0  c-0.186-0.186-0.391-0.352-0.609-0.498c-0.101-0.067-0.21-0.114-0.315-0.172c-0.124-0.066-0.242-0.142-0.373-0.195  c-0.135-0.057-0.275-0.089-0.415-0.129c-0.111-0.033-0.216-0.076-0.331-0.099C48.527,8.027,48.264,8,48.001,8l0,0  c-0.003,0-0.006,0.001-0.009,0.001c-0.259,0.001-0.519,0.027-0.774,0.078c-0.12,0.024-0.231,0.069-0.349,0.104  c-0.133,0.039-0.268,0.069-0.397,0.123c-0.139,0.058-0.265,0.136-0.396,0.208c-0.098,0.054-0.198,0.097-0.292,0.159  c-0.221,0.146-0.427,0.314-0.614,0.501L16.889,37.456c-1.562,1.562-1.562,4.095-0.001,5.657c1.562,1.562,4.094,1.562,5.658,0  L44,21.657V84c0,2.209,1.791,4,4,4S52,86.209,52,84z"/>
+      </svg>
+    </div>
+  </div>
+
+  <footer class="ms-footer ms-footer--template">
+    <section class="footer-container" data-parallax="on"> 
+            		<div data-elementor-type="page" data-elementor-id="589" class="elementor elementor-589">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-14c8a78 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="14c8a78" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-extended">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3954f96" data-id="3954f96" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-93ba111 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="93ba111" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-extended">
+					<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-812519d" data-id="812519d" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-601a7ce elementor-hidden-mobile elementor-widget elementor-widget-ms-simple-link" data-id="601a7ce" data-element_type="widget" data-widget_type="ms-simple-link.default">
+				<div class="elementor-widget-container">
+					
+        <a class="ms-sl" role="button" href="https://www.tiktok.com/@modboxco">
+
+            
+            Tik Tok
+            
+        </a>
+
+        				</div>
+				</div>
+				<div class="elementor-element elementor-element-f239da2 elementor-hidden-mobile elementor-widget elementor-widget-heading" data-id="f239da2" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">@modboxco</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-61cd5de elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-ms-social-icons" data-id="61cd5de" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="ms-social-icons.default">
+				<div class="elementor-widget-container">
+					        <div class="ms-s-w">
+        
+            
+            <a class="ms-s-i s-icon" href="./"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+    				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-ef3a10f" data-id="ef3a10f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-06f8731 elementor-hidden-mobile elementor-widget elementor-widget-ms-simple-link" data-id="06f8731" data-element_type="widget" data-widget_type="ms-simple-link.default">
+				<div class="elementor-widget-container">
+					
+        <a class="ms-sl" role="button" href="https://facebook.com/modboxco">
+
+            
+            Facebook
+            
+        </a>
+
+        				</div>
+				</div>
+				<div class="elementor-element elementor-element-b0a43cb elementor-hidden-mobile elementor-widget elementor-widget-heading" data-id="b0a43cb" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">@modboxco</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-49c0e9f elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-ms-social-icons" data-id="49c0e9f" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="ms-social-icons.default">
+				<div class="elementor-widget-container">
+					        <div class="ms-s-w">
+        
+            
+            <a class="ms-s-i s-icon" href="./"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+    				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-584ad94" data-id="584ad94" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-87cbb52 elementor-hidden-mobile elementor-widget elementor-widget-ms-simple-link" data-id="87cbb52" data-element_type="widget" data-widget_type="ms-simple-link.default">
+				<div class="elementor-widget-container">
+					
+        <a class="ms-sl" role="button" href="https://www.instagram.com/modbox.co">
+
+            
+            Instagram
+            
+        </a>
+
+        				</div>
+				</div>
+				<div class="elementor-element elementor-element-8dac158 elementor-hidden-mobile elementor-widget elementor-widget-heading" data-id="8dac158" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">@modbox.co</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-73c7fab elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-ms-social-icons" data-id="73c7fab" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="ms-social-icons.default">
+				<div class="elementor-widget-container">
+					        <div class="ms-s-w">
+        
+            
+            <a class="ms-s-i s-icon" href="./"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+    				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-9aa6089" data-id="9aa6089" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-d7edbd9 elementor-hidden-mobile elementor-widget elementor-widget-ms-simple-link" data-id="d7edbd9" data-element_type="widget" data-widget_type="ms-simple-link.default">
+				<div class="elementor-widget-container">
+					
+        <a class="ms-sl" role="button" href="https://discord.gg/3B2HyuJupG" target="_blank">
+
+            
+            Discord
+            
+        </a>
+
+        				</div>
+				</div>
+				<div class="elementor-element elementor-element-cdac7b0 elementor-hidden-mobile elementor-widget elementor-widget-heading" data-id="cdac7b0" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Únete a la comunidad</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-e4584f4 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-ms-social-icons" data-id="e4584f4" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="ms-social-icons.default">
+				<div class="elementor-widget-container">
+					        <div class="ms-s-w">
+        
+            
+            <a class="ms-s-i s-icon" href="https://discord.gg/3B2HyuJupG" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                </div>
+    				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-952e83c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="952e83c" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-extended">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c9695ae" data-id="c9695ae" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-2042a7e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="2042a7e" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-f00ed87" data-id="f00ed87" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-55cb9a4 elementor-widget elementor-widget-heading" data-id="55cb9a4" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<div class="mb-foot"><p class="mb-foot__copy">© 2016–<span class="mb-year">2026</span> <strong>MODBOX CO</strong><span class="mb-foot__sep" aria-hidden="true">·</span>Todos los derechos reservados.</p><p class="mb-foot__since"><span class="mb-foot__label">desde</span><span class="mb-keys" role="img" aria-label="2016"><kbd>2</kbd><kbd>0</kbd><kbd>1</kbd><kbd>6</kbd></span></p></div>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2eeceb4" data-id="2eeceb4" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+							</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		    </section>
+  </footer>
+
+<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+				<script type='text/javascript'>
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<link rel='stylesheet' id='wc-blocks-style-css' href='../../wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?v=b080cca2cd' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='../../wp-content/plugins/elementor/assets/css/frontend.min.css?v=ff1a8a277a' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-589-css' href='../../wp-content/uploads/elementor/css/post-589.css?v=7c0e677b51' type='text/css' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='../../wp-content/plugins/elementor/assets/css/widget-heading.min.css?v=b3fca9cf0f' type='text/css' media='all' />
+<style id='core-block-supports-inline-css' type='text/css'>
+.wp-block-gallery.wp-block-gallery-1{--wp--style--unstable-gallery-gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script type="text/javascript" src="../../wp-includes/js/imagesloaded.min.js?v=90b0adb37d" id="imagesloaded-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/modernizr.js?v=8ec9fd0feb" id="modernizr-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/isotope.pkgd.min.js?v=14c7f59e73" id="isotope-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/swiper-bundle.min.js?v=b5b89df6d6" id="swiper-bundle-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/jarallax.min.js?v=34bd869f75" id="jarallax-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/jarallax-video.min.js?v=b02a3cfb45" id="jarallax-video-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/video-background.js?v=ae2581739b" id="slider-video-background-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/plyr.js?v=1fdc17f06d" id="plyr-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/jquery.justifiedGallery.min.js?v=f67b527bde" id="justified-gallery-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/fslightbox.js?v=fb3ea5c91b" id="fslightbox-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/gsap.min.js?v=b655acdbd1" id="gsap-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/scrolltrigger.js?v=d882573f10" id="scroll-trigger-js"></script>
+<script type="text/javascript" src="../../wp-content/themes/most/assets/js/app.js?v=6148c2b97a" id="most-main-script-js"></script>
+<script type="text/javascript" id="vi-wpvs-frontend-script-js-extra">
+/* <![CDATA[ */
+var vi_wpvs_frontend_param = [];
+/* ]]> */
+</script>
+<script type="text/javascript" src="../../wp-content/plugins/product-variations-swatches-for-woocommerce/assets/js/frontend-script.min.js?v=8827ef5524" id="vi-wpvs-frontend-script-js"></script>
+<script id="mb-foot-js">(function(){var y=new Date().getFullYear();document.querySelectorAll('.mb-year').forEach(function(e){if(y>+e.textContent){e.textContent=y;}});
+var f=document.querySelector('.mb-foot');function gap(){if(!f){return;}f.style.paddingRight='';var r=f.getBoundingClientRect();if(innerWidth>767&&r.right>document.documentElement.clientWidth-90){f.style.paddingRight='72px';}}
+gap();addEventListener('resize',gap);
+var k=document.querySelector('.mb-keys');if(!k||!('IntersectionObserver' in window)||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){return;}
+var ks=k.querySelectorAll('kbd');new IntersectionObserver(function(en,o){if(!en[0].isIntersecting){return;}o.disconnect();
+ks.forEach(function(el,i){setTimeout(function(){el.classList.add('is-down');setTimeout(function(){el.classList.remove('is-down');},140);},250+i*170);});},{threshold:1}).observe(k);})();</script>
+<script id="mb-guia-js">
+(function () {
+	document.querySelectorAll('.mb-pasos').forEach(function (box, n) {
+		function interior(x) { return x.querySelector(':scope > .wp-block-group__inner-container') || x; }
+		var cont = interior(box);
+		var pasos = Array.prototype.filter.call(cont.children, function (el) { return el.classList.contains('mb-paso'); });
+		var total = pasos.length;
+		if (!total) return;
+		var clave = 'mb-guia:' + location.pathname + ':' + n;
+		var estado = { actual: 0, hechos: [] };
+		try { var g = JSON.parse(localStorage.getItem(clave)); if (g && Array.isArray(g.hechos)) estado = g; } catch (e) {}
+		estado.actual = Math.min(Math.max(+estado.actual || 0, 0), total - 1);
+		function guardar() { try { localStorage.setItem(clave, JSON.stringify(estado)); } catch (e) {} }
+		function el(tag, cls, txt) { var x = document.createElement(tag); if (cls) x.className = cls; if (txt != null) x.textContent = txt; return x; }
+		function titulo(p) { var h = p.querySelector('h3'); return h ? h.textContent.trim() : ''; }
+
+		var cab = el('div', 'mb-pasos__cabecera');
+		var prog = el('div', 'mb-pasos__progreso');
+		var progTxt = el('span');
+		var barra = el('div', 'mb-pasos__barra'); var relleno = el('i'); barra.appendChild(relleno);
+		var reiniciar = el('button', 'mb-pasos__reiniciar', 'Reiniciar'); reiniciar.type = 'button';
+		prog.append(progTxt, barra, reiniciar);
+		var indice = el('div', 'mb-pasos__indice');
+		var izq = el('button', 'mb-pasos__flecha', '←'); izq.type = 'button'; izq.setAttribute('aria-label', 'Paso anterior');
+		var der = el('button', 'mb-pasos__flecha', '→'); der.type = 'button'; der.setAttribute('aria-label', 'Paso siguiente');
+		var lista = el('ol', 'mb-pasos__lista'); lista.setAttribute('aria-label', 'Pasos del montaje');
+		var botones = pasos.map(function (p, i) {
+			var li = el('li'); var b = el('button', '', String(i + 1)); b.type = 'button';
+			b.title = titulo(p); b.setAttribute('aria-label', 'Paso ' + (i + 1) + ': ' + titulo(p));
+			b.addEventListener('click', function () { ir(i, true); });
+			li.appendChild(b); lista.appendChild(li); return b;
+		});
+		indice.append(izq, lista, der);
+		cab.append(prog, indice);
+		var fin = el('div', 'mb-pasos__fin', '¡Montaje terminado! Conecta tu macropad y empieza a configurarlo.');
+		cont.insertBefore(fin, cont.firstChild);
+		cont.insertBefore(cab, cont.firstChild);
+
+		pasos.forEach(function (p, i) {
+			p.id = p.id || 'paso-' + (i + 1);
+			p.setAttribute('role', 'group'); p.setAttribute('aria-label', 'Paso ' + (i + 1) + ' de ' + total);
+			var pc = interior(p);
+			pc.insertBefore(el('p', 'mb-paso__num', 'Paso ' + (i + 1) + ' de ' + total), pc.firstChild);
+			var pie = el('div', 'mb-paso__pie');
+			var ant = el('button', '', '← Anterior'); ant.type = 'button'; ant.disabled = i === 0;
+			var ok = el('button', 'mb-paso__hecho', i === total - 1 ? 'Terminar montaje ✓' : 'Hecho, siguiente paso →'); ok.type = 'button';
+			ant.addEventListener('click', function () { ir(i - 1, true); });
+			ok.addEventListener('click', function () {
+				if (estado.hechos.indexOf(i) < 0) estado.hechos.push(i);
+				if (i < total - 1) ir(i + 1, true); else { pintar(); guardar(); box.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+			});
+			pie.append(ant, ok); pc.appendChild(pie);
+		});
+
+		function pintar() {
+			var hechos = estado.hechos.length;
+			progTxt.textContent = hechos + ' de ' + total + ' completados';
+			relleno.style.width = (hechos / total * 100) + '%';
+			reiniciar.hidden = !hechos;
+			box.classList.toggle('is-terminado', hechos === total);
+			pasos.forEach(function (p, i) {
+				var h = estado.hechos.indexOf(i) >= 0;
+				p.classList.toggle('is-actual', i === estado.actual);
+				p.classList.toggle('is-hecho', h);
+				botones[i].classList.toggle('is-hecho', h);
+				if (i === estado.actual) botones[i].setAttribute('aria-current', 'step'); else botones[i].removeAttribute('aria-current');
+			});
+			izq.disabled = estado.actual === 0; der.disabled = estado.actual === total - 1;
+			var b = botones[estado.actual];
+			lista.scrollLeft = b.offsetLeft - lista.clientWidth / 2 + b.clientWidth / 2;
+		}
+		function ir(i, mover) {
+			if (i < 0 || i >= total) return;
+			estado.actual = i; pintar(); guardar();
+			if (mover) {
+				var r = box.getBoundingClientRect();
+				if (r.top < 0 || r.top > innerHeight * 0.4) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+		}
+		izq.addEventListener('click', function () { ir(estado.actual - 1, false); });
+		der.addEventListener('click', function () { ir(estado.actual + 1, false); });
+		reiniciar.addEventListener('click', function () { estado = { actual: 0, hechos: [] }; pintar(); guardar(); });
+		box.style.scrollMarginTop = '110px';
+		box.classList.add('is-activo');
+		pintar();
+	});
+	// Visor de la galería: clic en una foto la amplía; flechas, Esc o clic afuera para salir.
+	var fotos = Array.prototype.slice.call(document.querySelectorAll('.mb-guia-galeria img'));
+	if (fotos.length && window.HTMLDialogElement) {
+		var visor = document.createElement('dialog'), vimg = document.createElement('img'), vtxt = document.createElement('p'), actual = 0;
+		visor.className = 'mb-visor';
+		visor.setAttribute('aria-label', 'Galería');
+		function boton(cls, txt, label, fn) { var b = document.createElement('button'); b.type = 'button'; b.className = cls; b.textContent = txt; b.setAttribute('aria-label', label); b.addEventListener('click', fn); return b; }
+		// Foto grande: la del enlace "archivo multimedia" de la galería; si no hay, la misma imagen.
+		function grande(img) { var a = img.closest('a[href]'); return a ? a.href : (img.currentSrc || img.src); }
+		function mostrar(i) { actual = (i + fotos.length) % fotos.length; vimg.src = grande(fotos[actual]); vimg.alt = fotos[actual].alt; vtxt.textContent = fotos[actual].alt; }
+		visor.appendChild(vimg); visor.appendChild(vtxt);
+		visor.appendChild(boton('mb-visor__cerrar', '✕', 'Cerrar', function () { visor.close(); }));
+		if (fotos.length > 1) {
+			visor.appendChild(boton('mb-visor__ant', '←', 'Anterior', function () { mostrar(actual - 1); }));
+			visor.appendChild(boton('mb-visor__sig', '→', 'Siguiente', function () { mostrar(actual + 1); }));
+		}
+		visor.addEventListener('click', function (e) { if (e.target === visor) visor.close(); });
+		visor.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') mostrar(actual - 1); if (e.key === 'ArrowRight') mostrar(actual + 1); });
+		document.body.appendChild(visor);
+		fotos.forEach(function (img, i) {
+			var a = img.closest('a[href]'), el = a || img;
+			if (!a) { img.tabIndex = 0; img.setAttribute('role', 'button'); }
+			el.setAttribute('aria-label', 'Ampliar: ' + img.alt);
+			el.addEventListener('click', function (e) { e.preventDefault(); mostrar(i); visor.showModal(); });
+			if (!a) img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); mostrar(i); visor.showModal(); } });
+		});
+	}
+})();
+</script>
+
+</body>
+</html>
