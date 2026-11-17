@@ -546,6 +546,55 @@ new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStor
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/swiper-bundle.min.js?v=b5b89df6d6" id="swiper-bundle-js"></script>
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/jarallax.min.js?v=34bd869f75" id="jarallax-js"></script>
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/jarallax-video.min.js?v=b02a3cfb45" id="jarallax-video-js"></script>
+<script type="text/javascript" id="slider-video-background-js-before">
+/* <![CDATA[ */
+(function () {
+	var P = window.HTMLVideoElement && HTMLVideoElement.prototype;
+	if (P && !Object.getOwnPropertyDescriptor(P, 'playsinline')) {
+		Object.defineProperty(P, 'playsinline', {
+			configurable: true,
+			get: function () { return this.playsInline; },
+			set: function (v) {
+				this.playsInline = !!v;
+				if (v) {
+					this.setAttribute('playsinline', '');
+					this.setAttribute('webkit-playsinline', '');
+				}
+				if (this.muted) {
+					this.defaultMuted = true;
+					this.setAttribute('muted', '');
+				}
+			}
+		});
+	}
+
+	var videos = {"MBK6_concepto_1080p.mp4":{"movil":"/wp-content/uploads/2026/11/MBK6_concepto_movil.mp4","poster":"/wp-content/uploads/2026/11/MBK6_concepto_poster.webp","poster_movil":"/wp-content/uploads/2026/11/MBK6_concepto_poster_movil.webp"}};
+	var celular = !!window.matchMedia && matchMedia('(max-width: 599px) and (orientation: portrait)').matches;
+
+	Array.prototype.forEach.call(document.querySelectorAll('[data-vbg]'), function (el) {
+		var src = el.getAttribute('data-vbg') || '';
+		var v = videos[src.split('?')[0].split('/').pop()];
+		if (!v) { return; }
+		var poster = v.poster;
+		if (celular && v.movil) {
+			el.setAttribute('data-vbg', v.movil);
+			el.setAttribute('data-vbg-resolution', '9:16');
+			poster = v.poster_movil || '';
+		}
+		if (!poster || !window.MutationObserver) { return; }
+		// El tema deja el <video> invisible hasta que puede reproducirse: con poster se muestra
+		// desde el principio la imagen fija, y se queda si la reproducción automática está bloqueada.
+		new MutationObserver(function (m, obs) {
+			var video = el.querySelector('video');
+			if (!video) { return; }
+			obs.disconnect();
+			video.setAttribute('poster', poster);
+			video.style.opacity = 1;
+		}).observe(el, { childList: true });
+	});
+})();
+/* ]]> */
+</script>
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/video-background.js?v=ae2581739b" id="slider-video-background-js"></script>
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/plyr.js?v=1fdc17f06d" id="plyr-js"></script>
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/jquery.justifiedGallery.min.js?v=f67b527bde" id="justified-gallery-js"></script>
@@ -565,7 +614,7 @@ var vi_wpvs_frontend_param = [];
 <script type="text/javascript" id="elementor-frontend-js-before">
 /* <![CDATA[ */
 var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartir en Facebook","shareOnTwitter":"Compartir en Twitter","pinIt":"Pinear","download":"Descargar","downloadImage":"Descargar imagen","fullscreen":"Pantalla completa","zoom":"Zoom","share":"Compartir","playVideo":"Reproducir v\u00eddeo","previous":"Anterior","next":"Siguiente","close":"Cerrar","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Port\u00e1til","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Pantalla grande","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},
-"hasCustomBreakpoints":false},"version":"3.28.3","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_local_google_fonts":true,"nested-elements":true,"editor_v2":true,"home_screen":true},"urls":{"assets":"\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"","uploadUrl":"\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"19f335629c"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":7060,"title":"Knobs%20%E2%80%93%20MODBOX","excerpt":"","featuredImage":"\/wp-content\/uploads\/2020\/10\/IMG_3968-scaled-e1695524462482.webp"}};
+"hasCustomBreakpoints":false},"version":"3.28.3","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_local_google_fonts":true,"nested-elements":true,"editor_v2":true,"home_screen":true},"urls":{"assets":"\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"","uploadUrl":"\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"ee60fe4b04"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":7060,"title":"Knobs%20%E2%80%93%20MODBOX","excerpt":"","featuredImage":"\/wp-content\/uploads\/2020\/10\/IMG_3968-scaled-e1695524462482.webp"}};
 /* ]]> */
 </script>
 <script type="text/javascript" src="../../wp-content/plugins/elementor/assets/js/frontend.min.js?v=f5c963ed06" id="elementor-frontend-js"></script>
