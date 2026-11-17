@@ -54,6 +54,14 @@ var woocommerce_params = {"ajax_url":"","wc_ajax_url":"\/?wc-ajax=%%endpoint%%",
 </script>
 <script type="text/javascript" src="../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?v=e8481df815" id="woocommerce-js" defer="defer" data-wp-strategy="defer"></script>
 <link rel="canonical" href="./" />
+<style id="mb-menu-movil">
+.mb-sub-toggle{display:none}
+.is_mobile .navbar-nav .menu-item-has-children>a::after{display:none!important}
+.is_mobile .navbar-nav .menu-item-has-children>a .mb-sub-toggle{display:flex;align-items:center;justify-content:center;margin:calc(var(--space-xs,.5rem) * -1) -8px calc(var(--space-xs,.5rem) * -1) auto;align-self:stretch;width:48px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.is_mobile .mb-sub-toggle::before{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-25%) rotate(45deg);transition:transform .3s ease}
+.is_mobile .menu-item-has-children>a.active .mb-sub-toggle::before{transform:translateY(25%) rotate(-135deg)}
+.is_mobile .mb-sub-toggle:focus-visible{outline:2px solid currentColor;outline-offset:-4px;border-radius:6px}
+</style>
 	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
 	<style>
 				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
@@ -687,6 +695,46 @@ new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStor
 <script type="text/javascript" src="../wp-content/themes/most/assets/js/vendor/gsap.min.js?v=b655acdbd1" id="gsap-js"></script>
 <script type="text/javascript" src="../wp-content/themes/most/assets/js/vendor/scrolltrigger.js?v=d882573f10" id="scroll-trigger-js"></script>
 <script type="text/javascript" src="../wp-content/themes/most/assets/js/app.js?v=6148c2b97a" id="most-main-script-js"></script>
+<script type="text/javascript" id="most-main-script-js-after">
+/* <![CDATA[ */
+(function ($) {
+	// Quita los manejadores del tema que bloqueaban el enlace.
+	$(document).off('click', '.is_mobile .navbar-nav > .menu-item-has-children > a');
+	$(document).off('click', '.is_mobile .sub-menu > .menu-item-has-children > a');
+
+	$('.main-header__nav .navbar-nav .menu-item-has-children > a').each(function () {
+		var nombre = $.trim(this.textContent);
+		$('<span class="mb-sub-toggle" role="button" tabindex="0" aria-expanded="false"></span>')
+			.attr('aria-label', 'Mostrar opciones de ' + nombre)
+			.appendTo(this);
+	});
+
+	function alternar(btn) {
+		var $a = $(btn).closest('a'), $li = $a.parent(), abrir = !$a.hasClass('active');
+		$li.siblings('.menu-item-has-children').each(function () {
+			$(this).children('a').removeClass('active').find('.mb-sub-toggle').attr('aria-expanded', 'false');
+			$(this).children('.sub-menu').slideUp(200);
+		});
+		$a.toggleClass('active', abrir);
+		$(btn).attr('aria-expanded', abrir ? 'true' : 'false');
+		$li.children('.sub-menu')[abrir ? 'slideDown' : 'slideUp'](300);
+	}
+
+	$(document).on('click', '.is_mobile .mb-sub-toggle', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		alternar(this);
+	});
+	$(document).on('keydown', '.is_mobile .mb-sub-toggle', function (e) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			e.stopPropagation();
+			alternar(this);
+		}
+	});
+})(jQuery);
+/* ]]> */
+</script>
 <script type="text/javascript" id="vi-wpvs-frontend-script-js-extra">
 /* <![CDATA[ */
 var vi_wpvs_frontend_param = [];

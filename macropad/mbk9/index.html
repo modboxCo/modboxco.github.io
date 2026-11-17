@@ -49,6 +49,14 @@ var woocommerce_params = {"ajax_url":"","wc_ajax_url":"\/?wc-ajax=%%endpoint%%",
 </script>
 <script type="text/javascript" src="../../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?v=e8481df815" id="woocommerce-js" defer="defer" data-wp-strategy="defer"></script>
 <link rel="canonical" href="./" />
+<style id="mb-menu-movil">
+.mb-sub-toggle{display:none}
+.is_mobile .navbar-nav .menu-item-has-children>a::after{display:none!important}
+.is_mobile .navbar-nav .menu-item-has-children>a .mb-sub-toggle{display:flex;align-items:center;justify-content:center;margin:calc(var(--space-xs,.5rem) * -1) -8px calc(var(--space-xs,.5rem) * -1) auto;align-self:stretch;width:48px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.is_mobile .mb-sub-toggle::before{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-25%) rotate(45deg);transition:transform .3s ease}
+.is_mobile .menu-item-has-children>a.active .mb-sub-toggle::before{transform:translateY(25%) rotate(-135deg)}
+.is_mobile .mb-sub-toggle:focus-visible{outline:2px solid currentColor;outline-offset:-4px;border-radius:6px}
+</style>
 	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
 	<style>
 				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
@@ -460,7 +468,7 @@ new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStor
 
 <p>El MBK9 es un macropad de siete teclas y dos encoders con pulsador, que ocupan las esquinas superiores. Usa un RP2040 Zero con firmware QMK, se configura en tiempo real con VIA y tiene iluminación RGB perimetral con nueve LEDs.</p>
 
-<p>Solo existe en versión <strong>con PCB</strong>: la matriz, los diodos y los LEDs ya vienen en la placa. No hay cables que soldar: solo el RP2040 Zero, los siete switches y los dos encoders.</p>
+<p>Solo existe en versión <strong>con PCB</strong>: la matriz, los diodos, los LEDs y los sockets hotswap ya vienen en la placa. No hay cables que soldar: solo el RP2040 Zero y los dos encoders. Los switches se ponen a presión en los sockets, sin soldar, y puedes cambiarlos cuando quieras.</p>
 
 <h2 class="wp-block-heading" id="galeria">Galería</h2>
 
@@ -474,7 +482,7 @@ new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStor
 
 <h2 class="wp-block-heading" id="componentes">Componentes y herramientas</h2>
 
-<div class="wp-block-group mb-guia-recuadro"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><h3 class="wp-block-heading">Electrónica y piezas</h3><ul class="wp-block-list"><li><strong>x1</strong> PCB del MBK9 (diodos y LEDs RGB ya soldados)</li><li><strong>x1</strong> RP2040 Zero, con sus dos tiras de pines</li><li><strong>x7</strong> Switches MX</li><li><strong>x2</strong> Encoders rotativos EC11 con pulsador</li><li><strong>x7</strong> Keycaps MX (o imprímelas con keycap.stl)</li><li><strong>x1</strong> Cable USB-C de datos</li></ul><a class="mb-guia-producto" href="../../producto/mbk9-pcb/">PCB del MBK9<small>Ver en la tienda</small></a></div></div>
+<div class="wp-block-group mb-guia-recuadro"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><h3 class="wp-block-heading">Electrónica y piezas</h3><ul class="wp-block-list"><li><strong>x1</strong> PCB del MBK9 (diodos, LEDs RGB y sockets hotswap ya soldados)</li><li><strong>x1</strong> RP2040 Zero, con sus dos tiras de pines</li><li><strong>x7</strong> Switches MX</li><li><strong>x2</strong> Encoders rotativos EC11 con pulsador</li><li><strong>x7</strong> Keycaps MX (o imprímelas con keycap.stl)</li><li><strong>x1</strong> Cable USB-C de datos</li></ul><a class="mb-guia-producto" href="../../producto/mbk9-pcb/">PCB del MBK9<small>Ver en la tienda</small></a></div></div>
 
 <div class="wp-block-group mb-guia-recuadro"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><h3 class="wp-block-heading">Herramientas</h3><ul class="wp-block-list"><li><strong>x1</strong> Impresora 3D, con PLA y TPU</li><li><strong>x1</strong> Soldador y estaño</li><li><strong>x1</strong> Pinzas de corte</li><li><strong>x1</strong> Pinza metálica o un trozo de cable (para probar)</li></ul></div></div>
 
@@ -486,9 +494,9 @@ new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStor
 
 <div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Suelda el RP2040 Zero</h3><p>Pon las dos tiras de pines en la PCB, apoya el RP2040 Zero encima con la orientación que marca la serigrafía y suelda primero un pin de cada esquina. Revisa que quede plano y suelda el resto, por los dos lados.</p><p>Corta los pines sobrantes al ras de la cara donde van los switches, para que no toquen nada al montarlos.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x1</strong> RP2040 Zero</li><li><strong>x1</strong> Soldador y estaño</li><li><strong>x1</strong> Pinzas de corte</li></ul></div></div>
 
-<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Carga el firmware y prueba</h3><p>Mantén presionado el botón <strong>BOOT</strong> del RP2040 Zero mientras conectas el cable USB. En tu computador aparece una unidad llamada <code>RPI-RP2</code>: copia en ella <a href="https://github.com/modboxCo/mbk9/raw/main/firmware/mbk9_v0.8.uf2">mbk9_v0.8.uf2</a>. La placa se reinicia sola con el firmware nuevo y los LEDs de la PCB se encienden.</p><p>Antes de poner los switches, prueba la matriz: abre <a href="https://usevia.app/" target="_blank" rel="noopener">usevia.app</a>, activa <em>Show Design tab</em> en Settings, carga <a href="https://github.com/modboxCo/mbk9/raw/main/via/mbk9.json">mbk9.json</a> en la pestaña Design y entra en <em>Key Tester</em>. Puentea con la pinza los dos pads de cada switch y comprueba que se marca su tecla.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x1</strong> Cable USB-C de datos</li><li><strong>x1</strong> Pinza metálica o cable</li></ul></div></div>
+<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Carga el firmware y prueba</h3><p>Mantén presionado el botón <strong>BOOT</strong> del RP2040 Zero mientras conectas el cable USB. En tu computador aparece una unidad llamada <code>RPI-RP2</code>: copia en ella <a href="https://github.com/modboxCo/mbk9/raw/main/firmware/mbk9_v0.8.uf2">mbk9_v0.8.uf2</a>. La placa se reinicia sola con el firmware nuevo y los LEDs de la PCB se encienden.</p><p>Antes de poner los switches, prueba la matriz: abre <a href="https://usevia.app/" target="_blank" rel="noopener">usevia.app</a>, activa <em>Show Design tab</em> en Settings, carga <a href="https://github.com/modboxCo/mbk9/raw/main/via/mbk9.json">mbk9.json</a> en la pestaña Design y entra en <em>Key Tester</em>. Puentea con la pinza los dos contactos de cada socket hotswap y comprueba que se marca su tecla.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x1</strong> Cable USB-C de datos</li><li><strong>x1</strong> Pinza metálica o cable</li></ul></div></div>
 
-<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Monta los switches en la plate y suéldalos</h3><p>Encaja los siete switches en la plate impresa, desde arriba, hasta que hagan clic. Luego pon la plate sobre la PCB y guía los pines de cada switch por sus agujeros, sin doblar ninguno.</p><p>Suelda un pin de cada switch, revisa que la plate quede pareja sobre la PCB y suelda el resto. Vuelve al <em>Key Tester</em> de VIA y presiona las siete teclas; si falla una, revisa las soldaduras de ese switch.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x7</strong> Switches MX</li><li><strong>x1</strong> Soldador y estaño</li></ul><h4 class="wp-block-heading">Piezas impresas</h4><ul class="wp-block-list"><li>Plate</li></ul></div></div>
+<div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Monta los switches</h3><p>Encaja los siete switches en la plate impresa, desde arriba, hasta que hagan clic, y revisa que los dos pines metálicos de cada uno estén rectos. Luego pon la plate sobre la PCB, alinea los pines con los sockets hotswap y presiona cada switch hasta que entre del todo. No se suelda nada.</p><p>Mantén la PCB apoyada sobre la mesa mientras presionas, para que los sockets no se despeguen. Vuelve al <em>Key Tester</em> de VIA y presiona las siete teclas; si falla una, saca ese switch, endereza el pin que se haya doblado y vuelve a ponerlo.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x7</strong> Switches MX</li></ul><h4 class="wp-block-heading">Piezas impresas</h4><ul class="wp-block-list"><li>Plate</li></ul></div></div>
 
 <div class="wp-block-group mb-paso"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"><div class="mb-foto-pendiente">Foto pendiente</div><h3 class="wp-block-heading">Suelda los encoders</h3><p>Inserta los dos encoders en las esquinas superiores de la PCB: tres pines a un lado, dos al otro y las dos patas de sujeción. Suelda primero las patas de sujeción para que queden firmes y rectos, y luego los cinco pines.</p><p>En el <em>Key Tester</em>, al presionar cada encoder debe marcarse su tecla de la esquina. Al girarlos, por defecto suben y bajan el volumen.</p><h4 class="wp-block-heading">Necesitas</h4><ul class="wp-block-list"><li><strong>x2</strong> Encoders EC11 con pulsador</li><li><strong>x1</strong> Soldador y estaño</li></ul></div></div>
 
@@ -776,6 +784,46 @@ new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStor
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/gsap.min.js?v=b655acdbd1" id="gsap-js"></script>
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/scrolltrigger.js?v=d882573f10" id="scroll-trigger-js"></script>
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/app.js?v=6148c2b97a" id="most-main-script-js"></script>
+<script type="text/javascript" id="most-main-script-js-after">
+/* <![CDATA[ */
+(function ($) {
+	// Quita los manejadores del tema que bloqueaban el enlace.
+	$(document).off('click', '.is_mobile .navbar-nav > .menu-item-has-children > a');
+	$(document).off('click', '.is_mobile .sub-menu > .menu-item-has-children > a');
+
+	$('.main-header__nav .navbar-nav .menu-item-has-children > a').each(function () {
+		var nombre = $.trim(this.textContent);
+		$('<span class="mb-sub-toggle" role="button" tabindex="0" aria-expanded="false"></span>')
+			.attr('aria-label', 'Mostrar opciones de ' + nombre)
+			.appendTo(this);
+	});
+
+	function alternar(btn) {
+		var $a = $(btn).closest('a'), $li = $a.parent(), abrir = !$a.hasClass('active');
+		$li.siblings('.menu-item-has-children').each(function () {
+			$(this).children('a').removeClass('active').find('.mb-sub-toggle').attr('aria-expanded', 'false');
+			$(this).children('.sub-menu').slideUp(200);
+		});
+		$a.toggleClass('active', abrir);
+		$(btn).attr('aria-expanded', abrir ? 'true' : 'false');
+		$li.children('.sub-menu')[abrir ? 'slideDown' : 'slideUp'](300);
+	}
+
+	$(document).on('click', '.is_mobile .mb-sub-toggle', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		alternar(this);
+	});
+	$(document).on('keydown', '.is_mobile .mb-sub-toggle', function (e) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			e.stopPropagation();
+			alternar(this);
+		}
+	});
+})(jQuery);
+/* ]]> */
+</script>
 <script type="text/javascript" id="vi-wpvs-frontend-script-js-extra">
 /* <![CDATA[ */
 var vi_wpvs_frontend_param = [];

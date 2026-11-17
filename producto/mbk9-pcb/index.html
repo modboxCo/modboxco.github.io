@@ -56,6 +56,14 @@ var woocommerce_params = {"ajax_url":"","wc_ajax_url":"\/?wc-ajax=%%endpoint%%",
 </script>
 <script type="text/javascript" src="../../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?v=e8481df815" id="woocommerce-js" defer="defer" data-wp-strategy="defer"></script>
 <link rel="canonical" href="./" />
+<style id="mb-menu-movil">
+.mb-sub-toggle{display:none}
+.is_mobile .navbar-nav .menu-item-has-children>a::after{display:none!important}
+.is_mobile .navbar-nav .menu-item-has-children>a .mb-sub-toggle{display:flex;align-items:center;justify-content:center;margin:calc(var(--space-xs,.5rem) * -1) -8px calc(var(--space-xs,.5rem) * -1) auto;align-self:stretch;width:48px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.is_mobile .mb-sub-toggle::before{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-25%) rotate(45deg);transition:transform .3s ease}
+.is_mobile .menu-item-has-children>a.active .mb-sub-toggle::before{transform:translateY(25%) rotate(-135deg)}
+.is_mobile .mb-sub-toggle:focus-visible{outline:2px solid currentColor;outline-offset:-4px;border-radius:6px}
+</style>
 	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
 	<style>
 				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
@@ -225,7 +233,7 @@ new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStor
 
 				<div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4" style="opacity: 0; transition: opacity .25s ease-in-out;">
 	<figure class="woocommerce-product-gallery__wrapper TEST">
-		<div data-thumb="/wp-content/uploads/2026/11/mb9plus1-e1794868284190-150x150.webp" data-thumb-alt="" class="woocommerce-product-gallery__image"><a data-fancybox="" href="../../wp-content/uploads/2026/11/mb9plus1-e1794868284190.webp"><img fetchpriority="high" width="700" height="700" src="../../wp-content/uploads/2026/11/mb9plus1-e1794868284190-700x700.webp" class="wp-post-image" alt="" title="mb9plus1" data-caption="" data-src="/wp-content/uploads/2026/11/mb9plus1-e1794868284190.webp" data-large_image="/wp-content/uploads/2026/11/mb9plus1-e1794868284190.webp" data-large_image_width="952" data-large_image_height="952" decoding="async" /></a></div><div data-thumb="/wp-content/uploads/2026/11/mb9plus2-e1794868248693-150x150.webp" data-thumb-alt="" class="woocommerce-product-gallery__image"><a data-fancybox="" href="../../wp-content/uploads/2026/11/mb9plus2-e1794868248693.webp"><img width="700" height="700" src="../../wp-content/uploads/2026/11/mb9plus2-e1794868248693-700x700.webp" class="" alt="" title="mb9plus2" data-caption="" data-src="/wp-content/uploads/2026/11/mb9plus2-e1794868248693.webp" data-large_image="/wp-content/uploads/2026/11/mb9plus2-e1794868248693.webp" data-large_image_width="952" data-large_image_height="952" decoding="async" /></a></div>	</figure>
+		<div data-thumb="/wp-content/uploads/2026/11/mbk9_hotswap-e1794886367448-150x150.webp" data-thumb-alt="" class="woocommerce-product-gallery__image"><a data-fancybox="" href="../../wp-content/uploads/2026/11/mbk9_hotswap-e1794886367448.webp"><img fetchpriority="high" width="700" height="700" src="../../wp-content/uploads/2026/11/mbk9_hotswap-e1794886367448-700x700.webp" class="wp-post-image" alt="" title="mbk9_hotswap" data-caption="" data-src="/wp-content/uploads/2026/11/mbk9_hotswap-e1794886367448.webp" data-large_image="/wp-content/uploads/2026/11/mbk9_hotswap-e1794886367448.webp" data-large_image_width="952" data-large_image_height="952" decoding="async" /></a></div><div data-thumb="/wp-content/uploads/2026/11/mbk9_hotswap2-e1794886473830-150x150.webp" data-thumb-alt="" class="woocommerce-product-gallery__image"><a data-fancybox="" href="../../wp-content/uploads/2026/11/mbk9_hotswap2-e1794886473830.webp"><img width="700" height="700" src="../../wp-content/uploads/2026/11/mbk9_hotswap2-e1794886473830-700x700.webp" class="" alt="" title="mbk9_hotswap2" data-caption="" data-src="/wp-content/uploads/2026/11/mbk9_hotswap2-e1794886473830.webp" data-large_image="/wp-content/uploads/2026/11/mbk9_hotswap2-e1794886473830.webp" data-large_image_width="952" data-large_image_height="952" decoding="async" /></a></div>	</figure>
 </div>
 
 			</div>
@@ -237,7 +245,7 @@ new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStor
 			<div class="ms-single-product__content">
 				<h2 class="ms-single-product_title">MBK9 pcb</h2><p class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#36;</span>49.900</bdi></span></p>
 <div class="woocommerce-product-details__short-description">
-	<p>PCB para armar tu macropad MBK9: 7 teclas, 2 encoders con pulsador e iluminación RGB perimetral. Los diodos y los LEDs ya vienen soldados, así que solo tienes que soldar el RP2040 Zero, los switches y los encoders. Funciona con firmware QMK y se configura en tiempo real con VIA.</p>
+	<p>PCB para armar tu macropad MBK9: 7 teclas, 2 encoders con pulsador e iluminación RGB perimetral. Los diodos, los LEDs y los sockets hotswap ya vienen soldados, así que solo tienes que soldar el RP2040 Zero y los encoders; los switches se ponen a presión. Funciona con firmware QMK y se configura en tiempo real con VIA.</p>
 </div>
 <div class="mb-wa-wrap"><a href="https://wa.me/573186166449?text=Hola%20MODBOX%2C%20quiero%20comprar%3A%20MBK9%20pcb%0Ahttps%3A%2F%2Fmodboxco.github.io%2Fproducto%2Fmbk9-pcb%2F" class="mb-wa-btn mb-wa-btn--single" target="_blank" rel="noopener" aria-label="Comprar por WhatsApp: MBK9 pcb"><svg aria-hidden="true" viewBox="0 0 32 32" width="18" height="18"><path fill="currentColor" d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.5L3 29l6.7-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-4 1 1.1-3.9-.3-.4C5.8 20 5.3 18 5.3 16 5.3 10.1 10.1 5.3 16 5.3S26.7 10.1 26.7 16 21.9 26.7 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg><span>Comprar</span></a></div><div class="product_meta">
 
@@ -265,19 +273,19 @@ new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStor
 							<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
 					
 
-<p>Esta es la placa del macropad MBK9 de MODBOX. La matriz, los diodos y los nueve LEDs RGB ya están en la PCB. No hay cables que pelar ni componentes pequeños que soldar: sueldas el RP2040 Zero, los siete switches y los dos encoders, y listo.</p>
-<p>&#8211; 7 teclas MX para tus atajos, macros o comandos.<br />
+<p>Esta es la placa del macropad MBK9 de MODBOX. La matriz, los diodos, los nueve LEDs RGB y los sockets hotswap ya están en la PCB. No hay cables que pelar ni componentes pequeños que soldar: sueldas el RP2040 Zero y los dos encoders, y listo. Los switches se ponen a presión, sin soldar, y puedes cambiarlos cuando quieras.</p>
+<p>&#8211; 7 teclas MX hotswap para tus atajos, macros o comandos.<br />
 &#8211; 2 encoders con pulsador en las esquinas superiores: gíralos para el volumen, el zoom o el scroll, y presiónalos como una tecla más.<br />
 &#8211; Iluminación RGB perimetral con 9 LEDs: cambias el color, el brillo y el efecto desde VIA.</p>
 <p>Usa un RP2040 Zero con firmware QMK. Desde VIA (usevia.app) asignas teclas, macros y atajos, eliges qué hace cada encoder y ajustas la luz, sin volver a cargar firmware. Cargar el firmware es tan fácil como copiar un archivo a una memoria USB.</p>
 <p>Características</p>
-<p>&#8211; 7 teclas para switches MX + 2 encoders EC11 con pulsador<br />
-&#8211; Diodos y 9 LEDs RGB ya soldados<br />
+<p>&#8211; 7 teclas hotswap para switches MX (sin soldar) + 2 encoders EC11 con pulsador<br />
+&#8211; Diodos, 9 LEDs RGB y sockets hotswap ya soldados<br />
 &#8211; Controlador RP2040 Zero con conexión USB-C<br />
 &#8211; Firmware QMK, configurable con VIA<br />
 &#8211; Carcasa imprimible en 3D (cubiertas, plate y knobs en PLA; weight en TPU), gratis en nuestro GitHub</p>
 <p>Qué incluye</p>
-<p>&#8211; 1 PCB del MBK9 con diodos y LEDs RGB soldados</p>
+<p>&#8211; 1 PCB del MBK9 con diodos, LEDs RGB y 7 sockets hotswap soldados</p>
 <p>Qué necesitas aparte</p>
 <p>&#8211; 1 RP2040 Zero con sus tiras de pines<br />
 &#8211; 7 switches MX y 7 keycaps MX (también puedes imprimirlas)<br />
@@ -557,7 +565,7 @@ new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStor
 		    </section>
   </footer>
 
-<script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"Product","@id":"https:\/\/modboxco.github.io\/producto\/mbk9-pcb\/#product","name":"MBK9 pcb","url":"https:\/\/modboxco.github.io\/producto\/mbk9-pcb\/","description":"PCB para armar tu macropad MBK9: 7 teclas, 2 encoders con pulsador e iluminaci\u00f3n RGB perimetral. Los diodos y los LEDs ya vienen soldados, as\u00ed que solo tienes que soldar el RP2040 Zero, los switches y los encoders. Funciona con firmware QMK y se configura en tiempo real con VIA.","image":"\/wp-content\/uploads\/2026\/11\/mb9plus1-e1794868284190.webp","sku":"mbk9-pcb","offers":[{"@type":"Offer","priceSpecification":[{"@type":"UnitPriceSpecification","price":"49900","priceCurrency":"COP","valueAddedTaxIncluded":false,"validThrough":"2027-12-31"}],"priceValidUntil":"2027-12-31","availability":"http:\/\/schema.org\/InStock","url":"https:\/\/modboxco.github.io\/producto\/mbk9-pcb\/","seller":{"@type":"Organization","name":"MODBOX","url":"https:\/\/modboxco.github.io"}}]}</script>			<script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"Product","@id":"https:\/\/modboxco.github.io\/producto\/mbk9-pcb\/#product","name":"MBK9 pcb","url":"https:\/\/modboxco.github.io\/producto\/mbk9-pcb\/","description":"PCB para armar tu macropad MBK9: 7 teclas, 2 encoders con pulsador e iluminaci\u00f3n RGB perimetral. Los diodos, los LEDs y los sockets hotswap ya vienen soldados, as\u00ed que solo tienes que soldar el RP2040 Zero y los encoders; los switches se ponen a presi\u00f3n. Funciona con firmware QMK y se configura en tiempo real con VIA.","image":"\/wp-content\/uploads\/2026\/11\/mbk9_hotswap-e1794886367448.webp","sku":"mbk9-pcb","offers":[{"@type":"Offer","priceSpecification":[{"@type":"UnitPriceSpecification","price":"49900","priceCurrency":"COP","valueAddedTaxIncluded":false,"validThrough":"2027-12-31"}],"priceValidUntil":"2027-12-31","availability":"http:\/\/schema.org\/InStock","url":"https:\/\/modboxco.github.io\/producto\/mbk9-pcb\/","seller":{"@type":"Organization","name":"MODBOX","url":"https:\/\/modboxco.github.io"}}]}</script>			<script>
 				const lazyloadRunObserver = () => {
 					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
 					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
@@ -656,6 +664,46 @@ new MutationObserver(function(){var t=b.getAttribute('data-theme');try{localStor
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/gsap.min.js?v=b655acdbd1" id="gsap-js"></script>
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/vendor/scrolltrigger.js?v=d882573f10" id="scroll-trigger-js"></script>
 <script type="text/javascript" src="../../wp-content/themes/most/assets/js/app.js?v=6148c2b97a" id="most-main-script-js"></script>
+<script type="text/javascript" id="most-main-script-js-after">
+/* <![CDATA[ */
+(function ($) {
+	// Quita los manejadores del tema que bloqueaban el enlace.
+	$(document).off('click', '.is_mobile .navbar-nav > .menu-item-has-children > a');
+	$(document).off('click', '.is_mobile .sub-menu > .menu-item-has-children > a');
+
+	$('.main-header__nav .navbar-nav .menu-item-has-children > a').each(function () {
+		var nombre = $.trim(this.textContent);
+		$('<span class="mb-sub-toggle" role="button" tabindex="0" aria-expanded="false"></span>')
+			.attr('aria-label', 'Mostrar opciones de ' + nombre)
+			.appendTo(this);
+	});
+
+	function alternar(btn) {
+		var $a = $(btn).closest('a'), $li = $a.parent(), abrir = !$a.hasClass('active');
+		$li.siblings('.menu-item-has-children').each(function () {
+			$(this).children('a').removeClass('active').find('.mb-sub-toggle').attr('aria-expanded', 'false');
+			$(this).children('.sub-menu').slideUp(200);
+		});
+		$a.toggleClass('active', abrir);
+		$(btn).attr('aria-expanded', abrir ? 'true' : 'false');
+		$li.children('.sub-menu')[abrir ? 'slideDown' : 'slideUp'](300);
+	}
+
+	$(document).on('click', '.is_mobile .mb-sub-toggle', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		alternar(this);
+	});
+	$(document).on('keydown', '.is_mobile .mb-sub-toggle', function (e) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			e.stopPropagation();
+			alternar(this);
+		}
+	});
+})(jQuery);
+/* ]]> */
+</script>
 <script type="text/javascript" id="vi-wpvs-frontend-script-js-extra">
 /* <![CDATA[ */
 var vi_wpvs_frontend_param = [];
